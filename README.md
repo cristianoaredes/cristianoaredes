@@ -19,15 +19,15 @@
 
 ---
 
-## 📖 Sobre Mim
+## 📖 About Me
 
 <img align="right" width="300" src="https://github-readme-streak-stats.herokuapp.com/?user=cristianoaredes&theme=tokyonight" />
 
-Sou engenheiro de software com **14+ anos** de experiência em desenvolvimento mobile e backend. Especialista em **arquitetura de aplicativos**, escalabilidade e performance, com sólida atuação em **fintech**, **health-tech** e **AI-driven products**. 
+I'm a software engineer with **14+ years** of experience in mobile and backend development. Specialist in **application architecture**, scalability, and performance, with solid experience in **fintech**, **health-tech**, and **AI-driven products**. 
 
-Atualmente conduzo projetos de ponta envolvendo **Flutter**, **Swift/Kotlin** e integrações com **LLMs e AI Agents**, sempre visando máxima produtividade e excelência na experiência do usuário.
+Currently, I lead cutting-edge projects involving **Flutter**, **Swift/Kotlin**, and integrations with **LLMs and AI Agents**, always aiming for maximum productivity and excellence in user experience.
 
-> "Tecnologia com propósito: criar experiências móveis que resolvem problemas reais e geram valor duradouro."
+> "Technology with purpose: creating mobile experiences that solve real problems and generate lasting value."
 
 ---
 
@@ -55,17 +55,17 @@ Atualmente conduzo projetos de ponta envolvendo **Flutter**, **Swift/Kotlin** e 
 </div>
 
 <details>
-  <summary><b>🔍 Mais detalhes sobre meu tech stack</b></summary>
+  <summary><b>🔍 More details about my tech stack</b></summary>
   <br>
   
-  ### Mobile Nativo
+  ### Native Mobile
   - Swift · Objective-C · Kotlin · Java
   
-  ### Multiplataforma
+  ### Cross-platform
   - Flutter · Dart · React Native · Xamarin.Forms
   
-  ### Arquiteturas
-  - Clean Architecture · MVVM · BLoC · Modularização
+  ### Architectures
+  - Clean Architecture · MVVM · BLoC · Modularization
   
   ### Backend & API
   - Node.js · Express · FastAPI · GraphQL · REST
@@ -73,32 +73,29 @@ Atualmente conduzo projetos de ponta envolvendo **Flutter**, **Swift/Kotlin** e 
   ### Cloud & DevOps
   - AWS (Lambda · S3 · DynamoDB) · Firebase · Docker · Kubernetes · CI/CD (Fastlane · GitHub Actions · Jenkins)
   
-     ### Web & Animações
-   - HTML5 · CSS3 · SASS/SCSS · Three.js · WebGL · Canvas · SVG
-   - Framer Motion · GSAP · Lottie · CSS Animations · WebXR
-   
-   ### AI & ML
-   - OpenAI · LangChain · RAG · Vector DBs · CrewAI · AI Agents
-   
-   ### Banco de Dados
-   - MongoDB · PostgreSQL · SQLite · Realm · Firestore
-   
-   ### Testes & QA
-   - XCTest · Espresso · Flutter Driver · Mockito
-   
-   ### Versionamento
-   - Git · GitFlow · GitHub · GitLab
+  ### Web & Animations
+  - HTML5 · CSS3 · SASS/SCSS · Three.js · WebGL · Canvas · SVG
+  - Framer Motion · GSAP · Lottie · CSS Animations · WebXR
+  
+  ### AI & ML
+  - OpenAI · LangChain · RAG · Vector DBs · CrewAI · AI Agents
+  
+  ### Databases
+  - MongoDB · PostgreSQL · SQLite · Realm · Firestore
+  
+  ### Testing & QA
+  - XCTest · Espresso · Flutter Driver · Mockito
+  
+  ### Version Control
+  - Git · GitFlow · GitHub · GitLab
 </details>
 
 ---
 
-## 🚀 Projetos em Destaque
+## 🚀 Featured Projects
 
 <div class="projects-grid">
 
-  <a href="https://recyco.app/">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cristianoaredes&repo=recyco-app&theme=tokyonight" />
-  </a>
   <a href="https://github.com/cristianoaredes/super-app-flutter-sample">
     <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cristianoaredes&repo=super-app-flutter-sample&theme=tokyonight" />
   </a>
@@ -115,21 +112,21 @@ Atualmente conduzo projetos de ponta envolvendo **Flutter**, **Swift/Kotlin** e 
 </div>
 
 <details>
-  <summary><b>📊 Detalhes dos projetos</b></summary>
+  <summary><b>📊 Project details</b></summary>
   <br>
   
-  | Projeto | Descrição | Tech Highlights |
+  | Project | Description | Tech Highlights |
   | --- | --- | --- |
   
-  | [Super App Demo](https://github.com/cristianoaredes/super-app-flutter-sample) | "Super App" modular com GoRouter e GetIt | Flutter · Modular · BLoC |
-  | [AnythingToLLMs.txt](https://github.com/cristianoaredes/AnythingToLLMs.txt) | Conversor de documentos otimizado para modelos de linguagem | Python · FastAPI · Docker · PDF · DOCX · HTML |
-  | [NodeForge-API](https://github.com/cristianoaredes/NodeForge-API) | API para construção de fluxos de processamento de dados | Node.js · REST API · Data Processing |
-  | [Codemodel CLI](https://github.com/cristianoaredes/codemodel-cli) | Interface CLI para geração de código com modelos de IA | Python · CLI · Code Generation · AI Models |
+  | [Super App Demo](https://github.com/cristianoaredes/super-app-flutter-sample) | Modular "Super App" with GoRouter and GetIt | Flutter · Modular · BLoC |
+  | [AnythingToLLMs.txt](https://github.com/cristianoaredes/AnythingToLLMs.txt) | Document converter optimized for language models | Python · FastAPI · Docker · PDF · DOCX · HTML |
+  | [NodeForge-API](https://github.com/cristianoaredes/NodeForge-API) | API for building data processing flows | Node.js · REST API · Data Processing |
+  | [Codemodel CLI](https://github.com/cristianoaredes/codemodel-cli) | CLI interface for code generation with AI models | Python · CLI · Code Generation · AI Models |
 </details>
 
 ---
 
-## ✍️ Blog & Artigos
+## ✍️ Blog & Articles
 
 <div>
   <a href="https://medium.com/@cristianoaredes" target="_blank">
@@ -137,20 +134,20 @@ Atualmente conduzo projetos de ponta envolvendo **Flutter**, **Swift/Kotlin** e 
   </a>
 </div>
 
-### Artigos Recentes
+### Recent Articles
 
 * **[LLMS.txt: Enhancing Web Content for AI Interaction](https://medium.com/@cristianoaredes/llms-txt-enhancing-web-content-for-ai-interaction-9ae0f80c6da6)**
-  <br>Uma abordagem inovadora para otimizar conteúdo web para IA.
+  <br>An innovative approach to optimize web content for AI.
 
-* **[MCP e A2A: Como Protocolos Emergentes Estão Remodelando o Desenvolvimento de Software](https://medium.com/@cristianoaredes/mcp-e-a2a-como-protocolos-emergentes-est%C3%A3o-remodelando-o-desenvolvimento-de-software-a0431e096c53)**
-  <br>Análise dos novos paradigmas de comunicação entre aplicações.
+* **[MCP and A2A: How Emerging Protocols Are Reshaping Software Development](https://medium.com/@cristianoaredes/mcp-e-a2a-como-protocolos-emergentes-est%C3%A3o-remodelando-o-desenvolvimento-de-software-a0431e096c53)**
+  <br>Analysis of new paradigms of communication between applications.
 
-* **[A Guerra das IDEs com IA: O Novo Campo de Batalha Tecnológico](https://medium.com/@cristianoaredes/a-guerra-das-ides-com-ia-o-novo-campo-de-batalha-tecnol%C3%B3gico-e0389ecda32c)**
-  <br>Como a IA está transformando o cenário das IDEs e desenvolvimento.
+* **[The AI IDE War: The New Technology Battlefield](https://medium.com/@cristianoaredes/a-guerra-das-ides-com-ia-o-novo-campo-de-batalha-tecnol%C3%B3gico-e0389ecda32c)**
+  <br>How AI is transforming the IDE and development landscape.
 
 ---
 
-## 📫 Conecte-se Comigo  
+## 📫 Connect With Me  
 
 <div align="center">
   
@@ -171,10 +168,6 @@ Atualmente conduzo projetos de ponta envolvendo **Flutter**, **Swift/Kotlin** e 
 
 ---
 
----
-
----
-
 <div align="center">
   
   <img src="https://komarev.com/ghpvc/?username=cristianoaredes&style=flat-square&color=blue" alt="Profile Views"/>
@@ -187,10 +180,10 @@ Atualmente conduzo projetos de ponta envolvendo **Flutter**, **Swift/Kotlin** e 
 
 <div align="center">
   
-  ### 💬 Vamos conversar sobre projetos incríveis!
+  ### 💬 Let's talk about amazing projects!
   
   <a href="https://calendly.com/cristianoaredes/30min">
-    <img src="https://img.shields.io/badge/Agende_uma_reunião-4285F4?style=for-the-badge&logo=google-calendar&logoColor=white" />
+    <img src="https://img.shields.io/badge/Schedule_a_meeting-4285F4?style=for-the-badge&logo=google-calendar&logoColor=white" />
   </a>
   
 </div>
