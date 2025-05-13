@@ -120,7 +120,7 @@ Atualmente conduzo projetos de ponta envolvendo **Flutter**, **Swift/Kotlin** e 
   
   | Projeto | Descrição | Tech Highlights |
   | --- | --- | --- |
-  | [Recyco.app](https://recyco.app/) | App de reciclagem com classificação de resíduos via IA | Flutter · Node.js · FastAPI · AWS Bedrock · Vector DB |
+  
   | [Super App Demo](https://github.com/cristianoaredes/super-app-flutter-sample) | "Super App" modular com GoRouter e GetIt | Flutter · Modular · BLoC |
   | [AnythingToLLMs.txt](https://github.com/cristianoaredes/AnythingToLLMs.txt) | Conversor de documentos otimizado para modelos de linguagem | Python · FastAPI · Docker · PDF · DOCX · HTML |
   | [NodeForge-API](https://github.com/cristianoaredes/NodeForge-API) | API para construção de fluxos de processamento de dados | Node.js · REST API · Data Processing |
