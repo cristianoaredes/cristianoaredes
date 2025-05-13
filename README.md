@@ -169,29 +169,6 @@ Atualmente conduzo projetos de ponta envolvendo **Flutter**, **Swift/Kotlin** e 
 
 ---
 
-## 💼 Experiência Profissional  
-
-<div align="left">
-  <table>
-    <tr>
-      <td><b>2022-Atual</b></td>
-      <td><b>Senior Mobile Architect</b> - Banco BV</td>
-    </tr>
-    <tr>
-      <td><b>2020-2022</b></td>
-      <td><b>Tech Lead Flutter</b> - iFood</td>
-    </tr>
-    <tr>
-      <td><b>2018-2020</b></td>
-      <td><b>Senior Mobile Engineer</b> - Nubank</td>
-    </tr>
-    <tr>
-      <td><b>2016-2018</b></td>
-      <td><b>iOS Developer</b> - PagSeguro</td>
-    </tr>
-  </table>
-</div>
-
 ---
 
 <div align="center">
