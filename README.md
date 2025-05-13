@@ -39,12 +39,15 @@ Atualmente conduzo projetos de ponta envolvendo **Flutter**, **Swift/Kotlin** e 
   ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
   ![Swift](https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white)
   ![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white)
-  ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+  ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+  ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+  ![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
   ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
   ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-  ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-  ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
   ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+  ![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
+  ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
+  ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
   ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
   ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
@@ -70,17 +73,21 @@ Atualmente conduzo projetos de ponta envolvendo **Flutter**, **Swift/Kotlin** e 
   ### Cloud & DevOps
   - AWS (Lambda · S3 · DynamoDB) · Firebase · Docker · Kubernetes · CI/CD (Fastlane · GitHub Actions · Jenkins)
   
-  ### AI & ML
-  - OpenAI · LangChain · RAG · Vector DBs · CrewAI · AI Agents
-  
-  ### Banco de Dados
-  - MongoDB · PostgreSQL · SQLite · Realm · Firestore
-  
-  ### Testes & QA
-  - XCTest · Espresso · Flutter Driver · Mockito
-  
-  ### Versionamento
-  - Git · GitFlow · GitHub · GitLab
+     ### Web & Animações
+   - HTML5 · CSS3 · SASS/SCSS · Three.js · WebGL · Canvas · SVG
+   - Framer Motion · GSAP · Lottie · CSS Animations · WebXR
+   
+   ### AI & ML
+   - OpenAI · LangChain · RAG · Vector DBs · CrewAI · AI Agents
+   
+   ### Banco de Dados
+   - MongoDB · PostgreSQL · SQLite · Realm · Firestore
+   
+   ### Testes & QA
+   - XCTest · Espresso · Flutter Driver · Mockito
+   
+   ### Versionamento
+   - Git · GitFlow · GitHub · GitLab
 </details>
 
 ---
@@ -155,9 +162,6 @@ Atualmente conduzo projetos de ponta envolvendo **Flutter**, **Swift/Kotlin** e 
   </a>
   <a href="mailto:cristianoaredes@icloud.com">
     <img src="https://img.shields.io/badge/Email-cristianoaredes@icloud.com-D14836?style=for-the-badge&logo=gmail" />
-  </a>
-  <a href="https://wa.me/5511952732247">
-    <img src="https://img.shields.io/badge/WhatsApp-+55_11_95273_2247-25D366?style=for-the-badge&logo=whatsapp" />
   </a>
   <a href="https://twitter.com/cristianoaredes">
     <img src="https://img.shields.io/badge/Twitter-@cristianoaredes-1DA1F2?style=for-the-badge&logo=twitter" />
