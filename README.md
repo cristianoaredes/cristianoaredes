@@ -167,18 +167,6 @@ Atualmente conduzo projetos de ponta envolvendo **Flutter**, **Swift/Kotlin** e 
 
 ---
 
-## 🏆 Certificações  
-
-<div align="center">
-  
-  ![AWS](https://img.shields.io/badge/AWS_Certified_Developer_Associate-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)
-  ![Google](https://img.shields.io/badge/Google_Associate_Android_Developer-0F9D58?style=for-the-badge&logo=android&logoColor=white)
-  ![Apple](https://img.shields.io/badge/Apple_Certified_iOS_Developer-A2AAAD?style=for-the-badge&logo=apple&logoColor=white)
-  ![Flutter](https://img.shields.io/badge/Flutter_Certified_Application_Developer-02569B?style=for-the-badge&logo=flutter&logoColor=white)
-  ![Firebase](https://img.shields.io/badge/Firebase_Certified_Professional-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
-  
-</div>
-
 ---
 
 ## 💼 Experiência Profissional  
