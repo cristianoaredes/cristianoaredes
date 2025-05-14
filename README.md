@@ -42,6 +42,9 @@ Currently, I lead cutting-edge projects involving **Flutter**, **Swift/Kotlin**,
   ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
   ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
   ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+  ![LangChain](https://img.shields.io/badge/LangChain-00A9A6?style=for-the-badge&logo=chainlink&logoColor=white)
+  ![AI Agents](https://img.shields.io/badge/AI_Agents-FF5A00?style=for-the-badge&logo=onnx&logoColor=white)
+  ![RAG](https://img.shields.io/badge/RAG-E50914?style=for-the-badge&logo=database&logoColor=white)
   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
   ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
   
@@ -60,10 +63,17 @@ Currently, I lead cutting-edge projects involving **Flutter**, **Swift/Kotlin**,
   - Node.js · Express · RESTful APIs
   - Python · FastAPI
   
-  ### AI & Cloud
+  ### AI & ML
+  - RAG (Retrieval Augmented Generation)
+  - Vector Databases: Qdrant · Weaviate · Pinecone
+  - LLM Frameworks: LangChain · LangGraph · CrewAI
+  - AI Agents & Orchestration
+  - Cloud AI: AWS Bedrock · VertexAI · OpenAI
+  - Self-hosted LLMs · Embeddings
+  
+  ### Cloud & DevOps
   - Docker · CI/CD
   - AWS Services
-  - Language Models · AI Code Generation
   
   ### Tools & Practices
   - Clean Architecture
