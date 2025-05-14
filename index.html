@@ -33,6 +33,16 @@
             color: var(--light);
             transition: all 0.3s ease;
             overflow-x: hidden;
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                font-size: 15px;
+            }
         }
         
         .container {
@@ -61,6 +71,13 @@
             background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
             position: relative;
             overflow: hidden;
+            padding: 100px 0 60px 0;
+        }
+        
+        @media (min-width: 768px) {
+            .hero {
+                padding: 140px 0 80px 0;
+            }
         }
         
         .hero::before {
@@ -94,6 +111,14 @@
             font-weight: 500;
             transition: all 0.3s ease;
             text-decoration: none;
+            white-space: nowrap;
+        }
+        
+        @media (max-width: 480px) {
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.875rem;
+            }
         }
         
         .btn-primary {
@@ -171,9 +196,22 @@
             transition: all 0.3s ease;
         }
         
+        @media (max-width: 480px) {
+            .tech-badge {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.75rem;
+            }
+        }
+        
         .tech-badge i {
             margin-right: 0.5rem;
             font-size: 1.25rem;
+        }
+        
+        @media (max-width: 480px) {
+            .tech-badge i {
+                font-size: 1rem;
+            }
         }
         
         .tech-badge:hover {
@@ -188,12 +226,33 @@
             border: 1px solid var(--border);
             overflow: hidden;
             transition: all 0.3s ease;
+            height: 100%;
         }
         
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             border-color: var(--primary);
+        }
+        
+        /* Transição para Alpine.js */
+        [x-cloak] {
+            display: none !important;
+        }
+        
+        .transition-opacity {
+            transition-property: opacity;
+            transition-duration: 150ms;
+        }
+        
+        .transition-transform {
+            transition-property: transform;
+            transition-duration: 150ms;
+        }
+        
+        .transition-colors {
+            transition-property: color, background-color, border-color;
+            transition-duration: 150ms;
         }
     </style>
     <script>
@@ -385,13 +444,15 @@
                 <!-- Mobile Menu Button -->
                 <div class="flex items-center md:hidden">
                     <!-- Language Selector (Mobile) -->
-                    <button @click="currentLanguage = currentLanguage === 'en' ? 'pt' : 'en'" class="flex items-center text-sm text-gray-300 hover:text-white transition-colors border border-[var(--border)] rounded-md px-2 py-1 mr-3">
-                        <span x-text="currentLanguage === 'en' ? 'EN' : 'PT'" class="mr-1">EN</span>
-                        <i class="ri-translate text-[var(--primary)]"></i>
-                    </button>
+                    <div class="mr-4">
+                        <button @click="currentLanguage = 'en'" class="px-2 py-1 rounded text-xs transition-colors mr-1" 
+                                :class="currentLanguage === 'en' ? 'bg-[var(--primary)] text-white' : 'text-gray-400 hover:text-white'">EN</button>
+                        <button @click="currentLanguage = 'pt'" class="px-2 py-1 rounded text-xs transition-colors" 
+                                :class="currentLanguage === 'pt' ? 'bg-[var(--primary)] text-white' : 'text-gray-400 hover:text-white'">PT</button>
+                    </div>
                     
                     <!-- Menu Toggle -->
-                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-300 focus:outline-none">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-300 focus:outline-none p-2 rounded-lg hover:bg-[var(--card)]">
                         <i x-show="!mobileMenuOpen" class="ri-menu-line text-2xl"></i>
                         <i x-show="mobileMenuOpen" class="ri-close-line text-2xl"></i>
                     </button>
@@ -399,30 +460,40 @@
             </div>
             
             <!-- Mobile Menu -->
-            <div x-show="mobileMenuOpen" class="md:hidden fixed inset-0 bg-[var(--darker)] bg-opacity-95 z-50 flex flex-col">
-                <div class="flex justify-end p-4">
-                    <button @click="mobileMenuOpen = false" class="text-white">
+            <div x-show="mobileMenuOpen" 
+                 x-transition:enter="transition ease-out duration-200"
+                 x-transition:enter-start="opacity-0 transform scale-95"
+                 x-transition:enter-end="opacity-100 transform scale-100"
+                 x-transition:leave="transition ease-in duration-150"
+                 x-transition:leave-start="opacity-100 transform scale-100"
+                 x-transition:leave-end="opacity-0 transform scale-95"
+                 class="md:hidden fixed inset-0 bg-[var(--darker)] bg-opacity-98 z-50 flex flex-col">
+                <div class="flex justify-between items-center p-6 border-b border-[var(--border)]">
+                    <a href="#" class="text-xl font-bold text-white">
+                        Cristiano <span class="text-primary text-[var(--primary)]">Arêdes</span>
+                    </a>
+                    <button @click="mobileMenuOpen = false" class="text-white p-2 rounded-lg hover:bg-[var(--card)]">
                         <i class="ri-close-line text-2xl"></i>
                     </button>
                 </div>
                 
-                <div class="flex flex-col items-center justify-center flex-1 space-y-8">
-                    <a href="#about" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-white transition-colors" x-text="translations[currentLanguage].menu.about">About</a>
-                    <a href="#skills" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-white transition-colors" x-text="translations[currentLanguage].menu.skills">Skills</a>
-                    <a href="#projects" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-white transition-colors" x-text="translations[currentLanguage].menu.projects">Projects</a>
-                    <a href="#blog" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-white transition-colors" x-text="translations[currentLanguage].menu.blog">Blog</a>
-                    <a href="#contact" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-white transition-colors" x-text="translations[currentLanguage].menu.contact">Contact</a>
+                <div class="flex flex-col items-center justify-center flex-1 space-y-6 p-8 overflow-y-auto">
+                    <a href="#about" @click="mobileMenuOpen = false" class="text-xl text-gray-300 hover:text-white transition-colors hover:transform hover:translate-x-2" x-text="translations[currentLanguage].menu.about">About</a>
+                    <a href="#skills" @click="mobileMenuOpen = false" class="text-xl text-gray-300 hover:text-white transition-colors hover:transform hover:translate-x-2" x-text="translations[currentLanguage].menu.skills">Skills</a>
+                    <a href="#projects" @click="mobileMenuOpen = false" class="text-xl text-gray-300 hover:text-white transition-colors hover:transform hover:translate-x-2" x-text="translations[currentLanguage].menu.projects">Projects</a>
+                    <a href="#blog" @click="mobileMenuOpen = false" class="text-xl text-gray-300 hover:text-white transition-colors hover:transform hover:translate-x-2" x-text="translations[currentLanguage].menu.blog">Blog</a>
+                    <a href="#contact" @click="mobileMenuOpen = false" class="text-xl text-gray-300 hover:text-white transition-colors hover:transform hover:translate-x-2" x-text="translations[currentLanguage].menu.contact">Contact</a>
                     
-                    <a href="https://www.linkedin.com/in/cristianoaredes/" class="btn btn-primary text-sm inline-flex items-center mt-4" target="_blank">
+                    <a href="https://www.linkedin.com/in/cristianoaredes/" class="btn btn-primary text-lg inline-flex items-center mt-6 w-full justify-center" target="_blank">
                         <i class="ri-linkedin-fill mr-2"></i> <span x-text="translations[currentLanguage].menu.connect_linkedin">Connect on LinkedIn</span>
                     </a>
                     
                     <!-- Language Selector para Mobile -->
-                    <div class="flex mt-4">
-                        <button @click="currentLanguage = 'en'" class="px-4 py-2 rounded text-sm transition-colors mx-2" 
-                                :class="currentLanguage === 'en' ? 'bg-[var(--primary)] text-white' : 'text-gray-400 hover:text-white'">EN</button>
-                        <button @click="currentLanguage = 'pt'" class="px-4 py-2 rounded text-sm transition-colors mx-2" 
-                                :class="currentLanguage === 'pt' ? 'bg-[var(--primary)] text-white' : 'text-gray-400 hover:text-white'">PT</button>
+                    <div class="flex mt-8 border-t border-[var(--border)] pt-8 w-full justify-center">
+                        <button @click="currentLanguage = 'en'" class="px-8 py-3 rounded text-base transition-colors mx-2" 
+                                :class="currentLanguage === 'en' ? 'bg-[var(--primary)] text-white' : 'text-gray-400 hover:text-white border border-[var(--border)]'">English</button>
+                        <button @click="currentLanguage = 'pt'" class="px-8 py-3 rounded text-base transition-colors mx-2" 
+                                :class="currentLanguage === 'pt' ? 'bg-[var(--primary)] text-white' : 'text-gray-400 hover:text-white border border-[var(--border)]'">Português</button>
                     </div>
                 </div>
             </div>
@@ -432,21 +503,21 @@
     <!-- Hero Section -->
     <section class="hero min-h-screen pt-28 md:pt-0 flex items-center relative">
         <div class="container relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div data-aos="fade-right" data-aos-duration="1000">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:items-center">
+                <div data-aos="fade-right" data-aos-duration="1000" class="px-4 md:px-0 text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">
                         <span x-text="translations[currentLanguage].hero.greeting">Hi, I'm</span> <span class="text-[var(--primary)]">Cristiano</span>
                     </h1>
-                    <div class="h-12 mb-6">
+                    <div class="h-12 mb-8">
                         <p class="typewriter text-xl md:text-2xl font-medium text-gray-300" x-text="translations[currentLanguage].hero.title">
                             Mobile Architect & AI Engineer
                         </p>
                     </div>
-                    <p class="text-gray-400 mb-8 text-lg" x-text="translations[currentLanguage].hero.description">
+                    <p class="text-gray-400 mb-8 text-lg max-w-lg mx-auto md:mx-0" x-text="translations[currentLanguage].hero.description">
                         Bridging the gap between cutting-edge AI technologies and intuitive mobile experiences with Flutter, Swift, Kotlin, and LangChain. Creating solutions that solve real problems at scale.
                     </p>
                     
-                    <div class="flex flex-wrap gap-4">
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
                         <a href="#contact" class="btn btn-primary">
                             <i class="ri-mail-line"></i> <span x-text="translations[currentLanguage].hero.get_in_touch">Get in Touch</span>
                         </a>
@@ -455,7 +526,7 @@
                         </a>
                     </div>
                     
-                    <div class="mt-8 flex gap-4">
+                    <div class="mt-8 flex gap-4 justify-center md:justify-start">
                         <a href="https://www.linkedin.com/in/cristianoaredes/" target="_blank" class="social-icon">
                             <i class="ri-linkedin-fill"></i>
                         </a>
@@ -471,6 +542,15 @@
                     </div>
                 </div>
                 
+                <!-- Mobile hero image (visible só em dispositivos pequenos) -->
+                <div class="flex justify-center md:hidden mt-8 mb-12" data-aos="fade-up">
+                    <div class="relative w-48 h-48">
+                        <div class="absolute w-full h-full bg-[var(--primary)] opacity-10 rounded-full animate-pulse"></div>
+                        <img src="https://avatars.githubusercontent.com/u/4899347?v=4&size=256" alt="Cristiano Arêdes" class="rounded-full border-4 border-[var(--primary)] shadow-xl w-full h-full object-cover z-20 relative">
+                    </div>
+                </div>
+                
+                <!-- Desktop hero image -->
                 <div class="hidden md:block" data-aos="fade-left" data-aos-duration="1000">
                     <div class="relative">
                         <div class="hexagon absolute top-10 right-10 w-32 h-32 bg-[var(--card)] border border-[var(--primary)] rounded-xl transform rotate-45 animate-pulse"></div>
@@ -504,31 +584,33 @@
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-[var(--darker)]">
-        <div class="container">
+        <div class="container px-4 md:px-8">
             <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-3xl font-bold mb-4" x-text="translations[currentLanguage].sections.about.title">About Me</h2>
                 <div class="w-24 h-1 bg-[var(--primary)] mx-auto rounded-full"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start max-w-5xl mx-auto">
                 <!-- Left Column - Photo & Short Bio -->
                 <div class="md:col-span-1" data-aos="fade-right">
                     <div class="relative">
-                        <div class="absolute -top-6 -right-6 w-24 h-24 bg-[var(--card)] border border-[var(--primary)] rounded-xl transform rotate-12 animate-pulse opacity-50"></div>
+                        <div class="absolute -top-6 -right-6 w-16 h-16 md:w-24 md:h-24 bg-[var(--card)] border border-[var(--primary)] rounded-xl transform rotate-12 animate-pulse opacity-50"></div>
                         
-                        <div class="relative z-10 bg-gradient-to-br from-[var(--card)] to-[rgba(22,27,34,0.8)] p-6 rounded-xl border border-[var(--border)] shadow-xl">
-                            <div class="w-28 h-28 mx-auto rounded-full overflow-hidden border-4 border-[var(--primary)] shadow-lg mb-6">
+                        <div class="relative z-10 bg-gradient-to-br from-[var(--card)] to-[rgba(22,27,34,0.8)] p-4 md:p-6 rounded-xl border border-[var(--border)] shadow-xl">
+                            <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full overflow-hidden border-4 border-[var(--primary)] shadow-lg mb-6">
                                 <img src="https://avatars.githubusercontent.com/u/4899347?v=4&size=256" alt="Cristiano Arêdes" class="w-full h-full object-cover">
                             </div>
                             
                             <blockquote class="border-l-4 border-[var(--primary)] pl-4 italic text-gray-400 relative mb-6">
-                                <i class="ri-double-quotes-l absolute -top-2 -left-2 text-[var(--primary)] opacity-30 text-4xl"></i>
-                                <p class="relative z-10 text-sm">Technology with purpose: creating mobile experiences that solve real problems and generate lasting value.</p>
+                                <i class="ri-double-quotes-l absolute -top-2 -left-2 text-[var(--primary)] opacity-30 text-3xl md:text-4xl"></i>
+                                <p class="relative z-10 text-sm" x-text="currentLanguage === 'en' ? 'Technology with purpose: creating mobile experiences that solve real problems and generate lasting value.' : 'Tecnologia com propósito: criando experiências móveis que resolvem problemas reais e geram valor duradouro.'">
+                                    Technology with purpose: creating mobile experiences that solve real problems and generate lasting value.
+                                </p>
                             </blockquote>
                             
                             <div class="flex justify-center">
                                 <a href="/resume.pdf" target="_blank" class="btn btn-primary inline-flex items-center text-sm">
-                                    <i class="ri-file-text-line mr-2"></i> Download Resume
+                                    <i class="ri-file-text-line mr-2"></i> <span x-text="translations[currentLanguage].sections.about.download_resume">Download Resume</span>
                                 </a>
                             </div>
                         </div>
@@ -536,13 +618,13 @@
                 </div>
                 
                 <!-- Right Column - Professional Experience -->
-                <div class="md:col-span-2" data-aos="fade-left">
-                    <div class="bg-gradient-to-br from-[var(--card)] to-[rgba(22,27,34,0.8)] p-8 rounded-xl border border-[var(--border)] shadow-xl relative overflow-hidden">
+                <div class="md:col-span-2 mt-8 md:mt-0" data-aos="fade-left">
+                    <div class="bg-gradient-to-br from-[var(--card)] to-[rgba(22,27,34,0.8)] p-5 md:p-8 rounded-xl border border-[var(--border)] shadow-xl relative overflow-hidden">
                         <!-- Background decorative element -->
                         <div class="absolute -top-20 -right-20 w-40 h-40 bg-[var(--primary)] opacity-5 rounded-full"></div>
                         
                         <div class="relative z-10 space-y-6">
-                            <h3 class="text-xl font-bold text-[var(--primary)] mb-4">My Journey</h3>
+                            <h3 class="text-xl font-bold text-[var(--primary)] mb-4" x-text="translations[currentLanguage].sections.about.journey">My Journey</h3>
                             
                             <p class="text-gray-300 leading-relaxed" x-text="translations[currentLanguage].sections.about.journey_text1">
                                 With over a decade in mobile development, I've mastered the art of creating <strong>seamless user experiences</strong> that blend technical excellence with intuitive design. My career spans from native iOS/Android development to cross-platform solutions with Flutter.
@@ -553,8 +635,8 @@
                             </p>
                             
                             <div class="mt-6">
-                                <h4 class="text-lg font-semibold text-[var(--light)] mb-3">Areas of Expertise</h4>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <h4 class="text-lg font-semibold text-[var(--light)] mb-3" x-text="translations[currentLanguage].sections.about.areas_title">Areas of Expertise</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div class="bg-[var(--dark)] bg-opacity-50 p-4 rounded-lg border border-[var(--border)]">
                                         <div class="flex items-center mb-2">
                                             <i class="ri-smartphone-line text-[var(--primary)] mr-3 text-xl"></i>
@@ -597,22 +679,22 @@
 
     <!-- Skills Section -->
     <section id="skills" class="py-20 bg-[var(--darker)]">
-        <div class="container">
+        <div class="container px-4 md:px-8">
             <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-3xl font-bold mb-4" x-text="translations[currentLanguage].sections.skills.title">Skills & Expertise</h2>
                 <div class="w-24 h-1 bg-[var(--primary)] mx-auto rounded-full"></div>
-                <p class="text-gray-400 mt-4 max-w-2xl mx-auto" x-text="translations[currentLanguage].sections.skills.subtitle">
+                <p class="text-gray-400 mt-6 max-w-2xl mx-auto" x-text="translations[currentLanguage].sections.skills.subtitle">
                     Specialized in mobile development and AI integration, with expertise in the following technologies:
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div data-aos="fade-right">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <div data-aos="fade-right" class="p-4 md:p-0">
                     <h3 class="text-xl font-bold mb-6 flex items-center text-[var(--primary)]">
                         <i class="ri-smartphone-line mr-3 text-2xl"></i> <span x-text="translations[currentLanguage].sections.skills.mobile_dev">Mobile Development</span>
                     </h3>
                     
-                    <div class="flex flex-wrap gap-3">
+                    <div class="flex flex-wrap gap-2 md:gap-3">
                         <div class="tech-badge">
                             <i class="ri-flutter-fill text-blue-400"></i> Flutter
                         </div>
@@ -640,7 +722,7 @@
                         <i class="ri-server-line mr-3 text-2xl"></i> <span x-text="translations[currentLanguage].sections.skills.backend">Backend & API</span>
                     </h3>
                     
-                    <div class="flex flex-wrap gap-3">
+                    <div class="flex flex-wrap gap-2 md:gap-3">
                         <div class="tech-badge">
                             <i class="ri-nodejs-fill text-green-500"></i> Node.js
                         </div>
@@ -662,12 +744,12 @@
                     </div>
                 </div>
                 
-                <div data-aos="fade-left">
+                <div data-aos="fade-left" class="p-4 md:p-0">
                     <h3 class="text-xl font-bold mb-6 flex items-center text-[var(--primary)]">
                         <i class="ri-brain-line mr-3 text-2xl"></i> <span x-text="translations[currentLanguage].sections.skills.ai_ml">AI & ML</span>
                     </h3>
                     
-                    <div class="flex flex-wrap gap-3">
+                    <div class="flex flex-wrap gap-2 md:gap-3">
                         <div class="tech-badge">
                             <i class="ri-database-2-fill text-red-400"></i> RAG
                         </div>
@@ -710,7 +792,7 @@
                         <i class="ri-cloud-line mr-3 text-2xl"></i> <span x-text="translations[currentLanguage].sections.skills.cloud">Cloud & DevOps</span>
                     </h3>
                     
-                    <div class="flex flex-wrap gap-3">
+                    <div class="flex flex-wrap gap-2 md:gap-3">
                         <div class="tech-badge">
                             <i class="ri-docker-fill text-blue-400"></i> Docker
                         </div>
@@ -726,23 +808,22 @@
                     </div>
                 </div>
             </div>
-            
-
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="py-20 bg-[var(--dark)]">
-        <div class="container">
+        <div class="container px-4 md:px-8">
             <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-3xl font-bold mb-4" x-text="translations[currentLanguage].sections.projects.title">Featured Projects</h2>
                 <div class="w-24 h-1 bg-[var(--primary)] mx-auto rounded-full"></div>
-                <p class="text-gray-400 mt-4 max-w-2xl mx-auto" x-text="translations[currentLanguage].sections.projects.subtitle">
+                <p class="text-gray-400 mt-6 max-w-2xl mx-auto" x-text="translations[currentLanguage].sections.projects.subtitle">
                     A selection of my recent work, focusing on mobile applications and AI integrations
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Card de Projeto 1 -->
                 <div class="card overflow-hidden" data-aos="fade-up" data-aos-delay="100">
                     <div class="h-48 bg-gradient-to-r from-blue-600 to-purple-600 relative overflow-hidden">
                         <div class="absolute inset-0 flex items-center justify-center">
@@ -772,6 +853,7 @@
                     </div>
                 </div>
                 
+                <!-- Card de Projeto 2 -->
                 <div class="card overflow-hidden" data-aos="fade-up" data-aos-delay="200">
                     <div class="h-48 bg-gradient-to-r from-teal-600 to-blue-600 relative overflow-hidden">
                         <div class="absolute inset-0 flex items-center justify-center">
@@ -801,6 +883,7 @@
                     </div>
                 </div>
                 
+                <!-- Card de Projeto 3 -->
                 <div class="card overflow-hidden" data-aos="fade-up" data-aos-delay="300">
                     <div class="h-48 bg-gradient-to-r from-green-600 to-teal-600 relative overflow-hidden">
                         <div class="absolute inset-0 flex items-center justify-center">
@@ -841,54 +924,66 @@
 
     <!-- Blog Section -->
     <section id="blog" class="py-20 bg-[var(--darker)]">
-        <div class="container">
+        <div class="container px-4 md:px-8">
             <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-3xl font-bold mb-4" x-text="translations[currentLanguage].sections.blog.title">Latest Articles</h2>
                 <div class="w-24 h-1 bg-[var(--primary)] mx-auto rounded-full"></div>
-                <p class="text-gray-400 mt-4 max-w-2xl mx-auto" x-text="translations[currentLanguage].sections.blog.subtitle">
+                <p class="text-gray-400 mt-6 max-w-2xl mx-auto" x-text="translations[currentLanguage].sections.blog.subtitle">
                     Thoughts and insights on mobile development, AI technologies, and software architecture
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*F6q9XHJQIjl7Ln_5rz9G1Q.png" alt="LLMs.txt" class="w-full h-48 object-cover rounded-t-lg">
-                    <div class="p-6">
-                        <p class="text-gray-400 text-sm mb-2">Jun 12, 2023 · 8 min read</p>
-                        <h3 class="text-xl font-bold text-[var(--light)] mb-3">LLMS.txt: Enhancing Web Content for AI Interaction</h3>
-                        <p class="text-gray-300 mb-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Card de Blog 1 -->
+                <div class="card flex flex-col h-full" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*F6q9XHJQIjl7Ln_5rz9G1Q.png" alt="LLMs.txt" class="w-full h-full object-cover rounded-t-lg transition-transform hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[var(--darker)] via-transparent to-transparent opacity-70"></div>
+                    </div>
+                    <div class="p-5 md:p-6 flex-grow flex flex-col">
+                        <p class="text-gray-400 text-xs mb-2">Jun 12, 2023 · 8 min read</p>
+                        <h3 class="text-lg md:text-xl font-bold text-[var(--light)] mb-3">LLMS.txt: Enhancing Web Content for AI Interaction</h3>
+                        <p class="text-gray-300 mb-4 flex-grow">
                             An innovative approach to optimize web content for AI, making information more accessible and structured for language models.
                         </p>
-                        <a href="https://medium.com/@cristianoaredes/llms-txt-enhancing-web-content-for-ai-interaction-9ae0f80c6da6" target="_blank" class="text-[var(--primary)] font-medium hover:underline inline-flex items-center">
+                        <a href="https://medium.com/@cristianoaredes/llms-txt-enhancing-web-content-for-ai-interaction-9ae0f80c6da6" target="_blank" class="text-[var(--primary)] font-medium hover:underline inline-flex items-center mt-2">
                             <span x-text="translations[currentLanguage].sections.blog.read_article">Read Article</span> <i class="ri-arrow-right-line ml-1"></i>
                         </a>
                     </div>
                 </div>
                 
-                <div class="card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*axxRTz-J-Co-Tj0N8MUcrw.png" alt="MCP and A2A" class="w-full h-48 object-cover rounded-t-lg">
-                    <div class="p-6">
-                        <p class="text-gray-400 text-sm mb-2">Apr 23, 2023 · 10 min read</p>
-                        <h3 class="text-xl font-bold text-[var(--light)] mb-3">MCP and A2A: How Emerging Protocols Are Reshaping Software Development</h3>
-                        <p class="text-gray-300 mb-4">
+                <!-- Card de Blog 2 -->
+                <div class="card flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*axxRTz-J-Co-Tj0N8MUcrw.png" alt="MCP and A2A" class="w-full h-full object-cover rounded-t-lg transition-transform hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[var(--darker)] via-transparent to-transparent opacity-70"></div>
+                    </div>
+                    <div class="p-5 md:p-6 flex-grow flex flex-col">
+                        <p class="text-gray-400 text-xs mb-2">Apr 23, 2023 · 10 min read</p>
+                        <h3 class="text-lg md:text-xl font-bold text-[var(--light)] mb-3">MCP and A2A: How Emerging Protocols Are Reshaping Software Development</h3>
+                        <p class="text-gray-300 mb-4 flex-grow">
                             Analysis of new paradigms of communication between applications, exploring the Machine Centric Protocol (MCP) and App-to-App (A2A) communication.
                         </p>
-                        <a href="https://medium.com/@cristianoaredes/mcp-e-a2a-como-protocolos-emergentes-est%C3%A3o-remodelando-o-desenvolvimento-de-software-a0431e096c53" target="_blank" class="text-[var(--primary)] font-medium hover:underline inline-flex items-center">
-                            Read Article <i class="ri-arrow-right-line ml-1"></i>
+                        <a href="https://medium.com/@cristianoaredes/mcp-e-a2a-como-protocolos-emergentes-est%C3%A3o-remodelando-o-desenvolvimento-de-software-a0431e096c53" target="_blank" class="text-[var(--primary)] font-medium hover:underline inline-flex items-center mt-2">
+                            <span x-text="translations[currentLanguage].sections.blog.read_article">Read Article</span> <i class="ri-arrow-right-line ml-1"></i>
                         </a>
                     </div>
                 </div>
                 
-                <div class="card" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*96dza93qTOLxZron7LAyFw.png" alt="AI IDEs" class="w-full h-48 object-cover rounded-t-lg">
-                    <div class="p-6">
-                        <p class="text-gray-400 text-sm mb-2">Mar 7, 2023 · 12 min read</p>
-                        <h3 class="text-xl font-bold text-[var(--light)] mb-3">The AI IDE War: The New Technology Battlefield</h3>
-                        <p class="text-gray-300 mb-4">
+                <!-- Card de Blog 3 -->
+                <div class="card flex flex-col h-full" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*96dza93qTOLxZron7LAyFw.png" alt="AI IDEs" class="w-full h-full object-cover rounded-t-lg transition-transform hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[var(--darker)] via-transparent to-transparent opacity-70"></div>
+                    </div>
+                    <div class="p-5 md:p-6 flex-grow flex flex-col">
+                        <p class="text-gray-400 text-xs mb-2">Mar 7, 2023 · 12 min read</p>
+                        <h3 class="text-lg md:text-xl font-bold text-[var(--light)] mb-3">The AI IDE War: The New Technology Battlefield</h3>
+                        <p class="text-gray-300 mb-4 flex-grow">
                             How AI is transforming the IDE and development landscape, comparing tools like GitHub Copilot, Cursor, and JetBrains AI Assistant.
                         </p>
-                        <a href="https://medium.com/@cristianoaredes/a-guerra-das-ides-com-ia-o-novo-campo-de-batalha-tecnol%C3%B3gico-e0389ecda32c" target="_blank" class="text-[var(--primary)] font-medium hover:underline inline-flex items-center">
-                            Read Article <i class="ri-arrow-right-line ml-1"></i>
+                        <a href="https://medium.com/@cristianoaredes/a-guerra-das-ides-com-ia-o-novo-campo-de-batalha-tecnol%C3%B3gico-e0389ecda32c" target="_blank" class="text-[var(--primary)] font-medium hover:underline inline-flex items-center mt-2">
+                            <span x-text="translations[currentLanguage].sections.blog.read_article">Read Article</span> <i class="ri-arrow-right-line ml-1"></i>
                         </a>
                     </div>
                 </div>
@@ -904,18 +999,18 @@
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-[var(--dark)]">
-        <div class="container">
+        <div class="container px-4 md:px-8">
             <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-3xl font-bold mb-4" x-text="translations[currentLanguage].sections.contact.title">Get In Touch</h2>
                 <div class="w-24 h-1 bg-[var(--primary)] mx-auto rounded-full"></div>
-                <p class="text-gray-400 mt-4 max-w-2xl mx-auto" x-text="translations[currentLanguage].sections.contact.subtitle">
+                <p class="text-gray-400 mt-6 max-w-2xl mx-auto" x-text="translations[currentLanguage].sections.contact.subtitle">
                     Interested in working together or have a question? Reach out directly via WhatsApp!
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
                 <div data-aos="fade-right">
-                    <div class="card p-8">
+                    <div class="card p-6 md:p-8">
                         <form id="whatsappForm" class="space-y-6">
                             <div>
                                 <label for="name" class="block text-gray-300 mb-2" x-text="translations[currentLanguage].sections.contact.your_name">Your Name</label>
@@ -951,59 +1046,61 @@
                 </div>
                 
                 <div data-aos="fade-left">
-                    <h3 class="text-2xl font-bold mb-6 text-[var(--primary)]" x-text="translations[currentLanguage].sections.contact.contact_info">Contact Information</h3>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="bg-[var(--card)] p-3 rounded-lg mr-4">
-                                <i class="ri-whatsapp-line text-xl text-[var(--primary)]"></i>
+                    <div class="bg-[var(--card)] p-6 md:p-8 rounded-xl border border-[var(--border)]">
+                        <h3 class="text-2xl font-bold mb-6 text-[var(--primary)]" x-text="translations[currentLanguage].sections.contact.contact_info">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-[var(--darker)] p-3 rounded-lg mr-4 flex-shrink-0">
+                                    <i class="ri-whatsapp-line text-xl text-[var(--primary)]"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-[var(--light)]">WhatsApp</h4>
+                                    <a href="https://wa.me/5511952732247" target="_blank" class="text-gray-400 hover:text-[var(--primary)] block truncate">+55 11 95273-2247</a>
+                                </div>
                             </div>
-                            <div>
-                                <h4 class="font-semibold text-[var(--light)]">WhatsApp</h4>
-                                <a href="https://wa.me/5511952732247" target="_blank" class="text-gray-400 hover:text-[var(--primary)]">+55 11 95273-2247</a>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-[var(--darker)] p-3 rounded-lg mr-4 flex-shrink-0">
+                                    <i class="ri-mail-line text-xl text-[var(--primary)]"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-[var(--light)]">Email</h4>
+                                    <a href="mailto:cristianoaredes@icloud.com" class="text-gray-400 hover:text-[var(--primary)] block truncate">cristianoaredes@icloud.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-[var(--darker)] p-3 rounded-lg mr-4 flex-shrink-0">
+                                    <i class="ri-linkedin-fill text-xl text-[var(--primary)]"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-[var(--light)]">LinkedIn</h4>
+                                    <a href="https://www.linkedin.com/in/cristianoaredes/" target="_blank" class="text-gray-400 hover:text-[var(--primary)] block truncate">linkedin.com/in/cristianoaredes</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-[var(--darker)] p-3 rounded-lg mr-4 flex-shrink-0">
+                                    <i class="ri-translate text-xl text-[var(--primary)]"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-[var(--light)]">Languages</h4>
+                                    <p class="text-gray-400">English, Portuguese</p>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="flex items-start">
-                            <div class="bg-[var(--card)] p-3 rounded-lg mr-4">
-                                <i class="ri-mail-line text-xl text-[var(--primary)]"></i>
+                        <div class="mt-8 pt-6 border-t border-[var(--border)]">
+                            <h3 class="text-xl font-bold mb-4 text-[var(--light)]" x-text="translations[currentLanguage].sections.contact.key_skills">Key Skills</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-900 bg-opacity-30 text-blue-400 rounded text-xs">Flutter</span>
+                                <span class="px-2 py-1 bg-blue-900 bg-opacity-30 text-blue-400 rounded text-xs">Dart</span>
+                                <span class="px-2 py-1 bg-purple-900 bg-opacity-30 text-purple-400 rounded text-xs">BLoC</span>
+                                <span class="px-2 py-1 bg-green-900 bg-opacity-30 text-green-400 rounded text-xs">Python</span>
+                                <span class="px-2 py-1 bg-teal-900 bg-opacity-30 text-teal-400 rounded text-xs">FastAPI</span>
+                                <span class="px-2 py-1 bg-yellow-900 bg-opacity-30 text-yellow-400 rounded text-xs">AWS</span>
                             </div>
-                            <div>
-                                <h4 class="font-semibold text-[var(--light)]">Email</h4>
-                                <a href="mailto:cristianoaredes@icloud.com" class="text-gray-400 hover:text-[var(--primary)]">cristianoaredes@icloud.com</a>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-[var(--card)] p-3 rounded-lg mr-4">
-                                <i class="ri-linkedin-fill text-xl text-[var(--primary)]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-[var(--light)]">LinkedIn</h4>
-                                <a href="https://www.linkedin.com/in/cristianoaredes/" target="_blank" class="text-gray-400 hover:text-[var(--primary)]">linkedin.com/in/cristianoaredes</a>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-[var(--card)] p-3 rounded-lg mr-4">
-                                <i class="ri-translate text-xl text-[var(--primary)]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-[var(--light)]">Languages</h4>
-                                <p class="text-gray-400">English, Portuguese</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8">
-                        <h3 class="text-xl font-bold mb-4 text-[var(--light)]" x-text="translations[currentLanguage].sections.contact.key_skills">Key Skills</h3>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="px-2 py-1 bg-blue-900 bg-opacity-30 text-blue-400 rounded text-xs">Flutter</span>
-                            <span class="px-2 py-1 bg-blue-900 bg-opacity-30 text-blue-400 rounded text-xs">Dart</span>
-                            <span class="px-2 py-1 bg-purple-900 bg-opacity-30 text-purple-400 rounded text-xs">BLoC</span>
-                            <span class="px-2 py-1 bg-green-900 bg-opacity-30 text-green-400 rounded text-xs">Python</span>
-                            <span class="px-2 py-1 bg-teal-900 bg-opacity-30 text-teal-400 rounded text-xs">FastAPI</span>
-                            <span class="px-2 py-1 bg-yellow-900 bg-opacity-30 text-yellow-400 rounded text-xs">AWS</span>
                         </div>
                     </div>
                 </div>
@@ -1013,16 +1110,16 @@
 
     <!-- Footer -->
     <footer class="py-10 bg-[var(--dark)] border-t border-[var(--border)]">
-        <div class="container">
+        <div class="container px-4 md:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <a href="#" class="text-xl font-bold text-white">
-                        Cristiano <span class="text-[var(--primary)]">Arêdes</span>
+                <div class="mb-8 md:mb-0 text-center md:text-left">
+                    <a href="#" class="text-xl font-bold text-white inline-flex items-center">
+                        Cristiano <span class="text-[var(--primary)] ml-1">Arêdes</span>
                     </a>
                     <p class="text-gray-400 mt-2">Mobile Architect & AI Engineer</p>
                 </div>
                 
-                <div class="flex flex-wrap justify-center gap-4">
+                <div class="flex flex-wrap justify-center gap-4 mb-8 md:mb-0">
                     <a href="#about" class="text-sm text-gray-400 hover:text-white transition-colors" x-text="translations[currentLanguage].menu.about">About</a>
                     <a href="#experience" class="text-sm text-gray-400 hover:text-white transition-colors" x-text="translations[currentLanguage].footer.experience">Experience</a>
                     <a href="#skills" class="text-sm text-gray-400 hover:text-white transition-colors" x-text="translations[currentLanguage].menu.skills">Skills</a>
@@ -1031,29 +1128,32 @@
                     <a href="#contact" class="text-sm text-gray-400 hover:text-white transition-colors" x-text="translations[currentLanguage].menu.contact">Contact</a>
                 </div>
                 
-                <div class="mt-4 md:mt-0">
-                    <div class="flex gap-4">
-                        <a href="https://www.linkedin.com/in/cristianoaredes/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="ri-linkedin-fill text-xl"></i>
-                        </a>
-                        <a href="https://twitter.com/cristianoaredes" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="ri-twitter-fill text-xl"></i>
-                        </a>
-                        <a href="https://github.com/cristianoaredes" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="ri-github-fill text-xl"></i>
-                        </a>
-                        <a href="https://medium.com/@cristianoaredes" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="ri-medium-fill text-xl"></i>
-                        </a>
-                    </div>
+                <div class="flex gap-4 mb-8 md:mb-0 md:mt-0">
+                    <a href="https://www.linkedin.com/in/cristianoaredes/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="ri-linkedin-fill text-xl"></i>
+                    </a>
+                    <a href="https://twitter.com/cristianoaredes" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="ri-twitter-fill text-xl"></i>
+                    </a>
+                    <a href="https://github.com/cristianoaredes" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="ri-github-fill text-xl"></i>
+                    </a>
+                    <a href="https://medium.com/@cristianoaredes" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="ri-medium-fill text-xl"></i>
+                    </a>
                 </div>
             </div>
             
-            <div class="text-center text-gray-500 text-sm mt-8">
+            <div class="text-center text-gray-500 text-sm mt-8 pt-8 border-t border-[var(--border)]">
                 &copy; <span id="currentYear"></span> Cristiano Arêdes Costa. <span x-text="translations[currentLanguage].footer.rights">All rights reserved.</span>
             </div>
         </div>
     </footer>
+
+    <!-- Botão para voltar ao topo -->
+    <button id="backToTop" class="fixed bottom-6 right-6 z-50 bg-[var(--primary)] text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transform transition-all duration-300 scale-0 hover:scale-110 focus:outline-none">
+        <i class="ri-arrow-up-line text-2xl"></i>
+    </button>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1061,21 +1161,65 @@
             AOS.init({
                 once: true,
                 duration: 800,
-                easing: 'ease-in-out'
+                easing: 'ease-in-out',
+                disable: 'mobile' // Desativa em dispositivos móveis para melhor performance
             });
             
             // Header Scroll Effect
             const header = document.getElementById('header');
+            const backToTopBtn = document.getElementById('backToTop');
+            
             window.addEventListener('scroll', function() {
+                // Header effect
                 if (window.scrollY > 50) {
                     header.classList.add('scrolled');
                 } else {
                     header.classList.remove('scrolled');
                 }
+                
+                // Back to top button
+                if (window.scrollY > 500) {
+                    backToTopBtn.classList.remove('scale-0');
+                    backToTopBtn.classList.add('scale-100');
+                } else {
+                    backToTopBtn.classList.remove('scale-100');
+                    backToTopBtn.classList.add('scale-0');
+                }
+            });
+            
+            // Back to top click event
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             });
             
             // Set current year in footer
             document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    // Close mobile menu if open
+                    if (window.Alpine) {
+                        const alpineData = window.Alpine.$data(document.body);
+                        if (alpineData.mobileMenuOpen) {
+                            alpineData.mobileMenuOpen = false;
+                        }
+                    }
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
             
             // WhatsApp form submission
             const whatsappForm = document.getElementById('whatsappForm');
@@ -1091,8 +1235,8 @@
                     
                     if (!name || !email || !message) {
                         alert(window.Alpine.$data(document.body).currentLanguage === 'en' ? 
-                              'Please fill in all required fields' : 
-                              'Por favor, preencha todos os campos obrigatórios');
+                            'Please fill in all required fields' : 
+                            'Por favor, preencha todos os campos obrigatórios');
                         return;
                     }
                     
@@ -1100,8 +1244,8 @@
                     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                     if (!emailRegex.test(email)) {
                         alert(window.Alpine.$data(document.body).currentLanguage === 'en' ? 
-                              'Please enter a valid email address' : 
-                              'Por favor, digite um endereço de email válido');
+                            'Please enter a valid email address' : 
+                            'Por favor, digite um endereço de email válido');
                         return;
                     }
                     
@@ -1138,6 +1282,33 @@
                     whatsappForm.reset();
                 });
             }
+            
+            // Adiciona atributo loading="lazy" para imagens
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (!img.hasAttribute('loading')) {
+                    img.setAttribute('loading', 'lazy');
+                }
+            });
+            
+            // Melhora a acessibilidade adicionando atributos aria
+            const socialLinks = document.querySelectorAll('.social-icon');
+            socialLinks.forEach(link => {
+                const icon = link.querySelector('i');
+                if (icon) {
+                    const className = icon.className;
+                    let socialNetwork = '';
+                    
+                    if (className.includes('linkedin')) socialNetwork = 'LinkedIn';
+                    else if (className.includes('twitter')) socialNetwork = 'Twitter';
+                    else if (className.includes('github')) socialNetwork = 'GitHub';
+                    else if (className.includes('medium')) socialNetwork = 'Medium';
+                    
+                    if (socialNetwork) {
+                        link.setAttribute('aria-label', socialNetwork);
+                    }
+                }
+            });
         });
     </script>
 </body>
