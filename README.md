@@ -168,10 +168,10 @@ Currently, I lead cutting-edge projects involving **Flutter**, **Swift/Kotlin**,
 
 <div align="center">
   
-  ### 💬 Let's talk about amazing projects!
+  ### 💬 Let's connect and collaborate!
   
-  <a href="https://calendly.com/cristianoaredes/30min">
-    <img src="https://img.shields.io/badge/Schedule_a_meeting-4285F4?style=for-the-badge&logo=google-calendar&logoColor=white" />
+  <a href="https://www.linkedin.com/in/cristianoaredes/">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
   
 </div>
