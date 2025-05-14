@@ -566,8 +566,33 @@
                         </button>
                     </div>
                     
+                    <!-- MAIN NAVIGATION LINKS - PROMINENT PLACEMENT -->
+                    <nav class="flex flex-col mx-5 my-8" id="mobile-menu-title">
+                        <h2 class="text-center text-lg font-medium text-gray-400 mb-4">Menu</h2>
+                        <a href="#about" @click="mobileMenuOpen = false" 
+                           class="py-4 text-xl font-medium w-full text-center border-b border-[rgba(255,255,255,0.08)]
+                                  hover:text-[var(--primary)] focus:outline-none focus:text-[var(--primary)] transition-colors"
+                           x-text="translations[currentLanguage].menu.about">About</a>
+                        <a href="#skills" @click="mobileMenuOpen = false" 
+                           class="py-4 text-xl font-medium w-full text-center border-b border-[rgba(255,255,255,0.08)]
+                                  hover:text-[var(--primary)] focus:outline-none focus:text-[var(--primary)] transition-colors"
+                           x-text="translations[currentLanguage].menu.skills">Skills</a>
+                        <a href="#projects" @click="mobileMenuOpen = false" 
+                           class="py-4 text-xl font-medium w-full text-center border-b border-[rgba(255,255,255,0.08)]
+                                  hover:text-[var(--primary)] focus:outline-none focus:text-[var(--primary)] transition-colors"
+                           x-text="translations[currentLanguage].menu.projects">Projects</a>
+                        <a href="#blog" @click="mobileMenuOpen = false" 
+                           class="py-4 text-xl font-medium w-full text-center border-b border-[rgba(255,255,255,0.08)]
+                                  hover:text-[var(--primary)] focus:outline-none focus:text-[var(--primary)] transition-colors"
+                           x-text="translations[currentLanguage].menu.blog">Blog</a>
+                        <a href="#contact" @click="mobileMenuOpen = false" 
+                           class="py-4 text-xl font-medium w-full text-center
+                                  hover:text-[var(--primary)] focus:outline-none focus:text-[var(--primary)] transition-colors"
+                           x-text="translations[currentLanguage].menu.contact">Contact</a>
+                    </nav>
+                    
                     <!-- Language Selector -->
-                    <div class="flex justify-center mt-6 mb-4">
+                    <div class="flex justify-center mb-4">
                         <div class="flex bg-[rgba(66,153,225,0.15)] rounded-full p-1">
                             <button @click="currentLanguage = 'en'" 
                                     class="px-6 py-2 rounded-full transition-colors text-center" 
@@ -578,41 +603,6 @@
                                     :class="currentLanguage === 'pt' ? 'bg-[var(--primary)] text-white' : 'text-gray-400 hover:text-white'"
                                     aria-label="Switch to Portuguese">Português</button>
                         </div>
-                    </div>
-                    
-                    <!-- Main Navigation Links -->
-                    <nav class="flex flex-col mx-5 mb-6" id="mobile-menu-title">
-                        <a href="#about" @click="mobileMenuOpen = false" 
-                           class="py-4 text-xl font-medium w-full text-center border-b border-[rgba(255,255,255,0.05)]
-                                  hover:text-[var(--primary)] focus:outline-none focus:text-[var(--primary)] transition-colors"
-                           x-text="translations[currentLanguage].menu.about">About</a>
-                        <a href="#skills" @click="mobileMenuOpen = false" 
-                           class="py-4 text-xl font-medium w-full text-center border-b border-[rgba(255,255,255,0.05)]
-                                  hover:text-[var(--primary)] focus:outline-none focus:text-[var(--primary)] transition-colors"
-                           x-text="translations[currentLanguage].menu.skills">Skills</a>
-                        <a href="#projects" @click="mobileMenuOpen = false" 
-                           class="py-4 text-xl font-medium w-full text-center border-b border-[rgba(255,255,255,0.05)]
-                                  hover:text-[var(--primary)] focus:outline-none focus:text-[var(--primary)] transition-colors"
-                           x-text="translations[currentLanguage].menu.projects">Projects</a>
-                        <a href="#blog" @click="mobileMenuOpen = false" 
-                           class="py-4 text-xl font-medium w-full text-center border-b border-[rgba(255,255,255,0.05)]
-                                  hover:text-[var(--primary)] focus:outline-none focus:text-[var(--primary)] transition-colors"
-                           x-text="translations[currentLanguage].menu.blog">Blog</a>
-                        <a href="#contact" @click="mobileMenuOpen = false" 
-                           class="py-4 text-xl font-medium w-full text-center
-                                  hover:text-[var(--primary)] focus:outline-none focus:text-[var(--primary)] transition-colors"
-                           x-text="translations[currentLanguage].menu.contact">Contact</a>
-                    </nav>
-                    
-                    <!-- Brief intro -->
-                    <div class="px-5 py-3 text-center">
-                        <h3 class="text-2xl font-bold mb-2">
-                            <span x-text="translations[currentLanguage].hero.greeting">Hi, I'm</span> 
-                            <span class="text-[var(--primary)]">Cristiano</span>
-                        </h3>
-                        <p class="text-gray-400 mb-6 text-base" x-text="translations[currentLanguage].hero.description">
-                            Bridging the gap between cutting-edge AI technologies and intuitive mobile experiences.
-                        </p>
                     </div>
                     
                     <!-- Action buttons -->
