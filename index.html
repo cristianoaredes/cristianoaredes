@@ -1,16 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <!-- Adicionar meta tags para SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cristiano Arêdes Costa - Mobile Architect & AI Engineer</title>
+    <meta name="description" content="Cristiano Arêdes - Mobile Architect & AI Engineer specialized in Flutter, Swift, Kotlin and LangChain. Creating solutions that solve real problems at scale.">
+    <meta name="keywords" content="Mobile Architect, AI Engineer, Flutter, Swift, Kotlin, LangChain, Mobile Developer, Software Engineer, AI Integration">
+    <meta name="author" content="Cristiano Arêdes Costa">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/4899347?v=4&size=32">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cristianoaredes.github.io/">
+    <meta property="og:title" content="Cristiano Arêdes - Mobile Architect & AI Engineer">
+    <meta property="og:description" content="Mobile and AI specialist bridging cutting-edge technologies with intuitive experiences using Flutter, Swift, Kotlin, and LangChain. Creating solutions that solve real problems at scale.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/4899347?v=4&size=400">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cristianoaredes.github.io/">
+    <meta property="twitter:title" content="Cristiano Arêdes - Mobile Architect & AI Engineer">
+    <meta property="twitter:description" content="Mobile and AI specialist bridging cutting-edge technologies with intuitive experiences using Flutter, Swift, Kotlin, and LangChain.">
+    <meta property="twitter:image" content="https://avatars.githubusercontent.com/u/4899347?v=4&size=400">
+    
+    <!-- Canonical URL -->
+    <meta rel="canonical" href="https://cristianoaredes.github.io/">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root {
@@ -254,6 +289,45 @@
             transition-property: color, background-color, border-color;
             transition-duration: 150ms;
         }
+        
+        /* Estilos para preferência de movimento reduzido */
+        @media (prefers-reduced-motion: reduce) {
+            .animate-pulse, 
+            .animate-bounce, 
+            .transition-transform,
+            .transition-opacity,
+            .transition-colors {
+                animation: none !important;
+                transition: none !important;
+            }
+            
+            [data-aos] {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            
+            .hero::before {
+                animation: none !important;
+            }
+        }
+        
+        .reduced-motion .animate-pulse,
+        .reduced-motion .animate-bounce,
+        .reduced-motion .transition-transform,
+        .reduced-motion .transition-opacity,
+        .reduced-motion .transition-colors {
+            animation: none !important;
+            transition: none !important;
+        }
+        
+        .reduced-motion [data-aos] {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+        
+        .reduced-motion .hero::before {
+            animation: none !important;
+        }
     </style>
     <script>
     // Language data object
@@ -452,7 +526,7 @@
                     </div>
                     
                     <!-- Menu Toggle -->
-                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-300 focus:outline-none p-3 rounded-lg hover:bg-[var(--card)] border border-[var(--border)] bg-[var(--dark)] bg-opacity-70 shadow-md">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-300 focus:outline-none p-3 rounded-lg hover:bg-[var(--card)] border border-[var(--border)] bg-[var(--dark)] bg-opacity-70 shadow-md" aria-label="Menu" aria-expanded="false" :aria-expanded="mobileMenuOpen">
                         <i x-show="!mobileMenuOpen" class="ri-menu-line text-2xl text-[var(--primary)]"></i>
                         <i x-show="mobileMenuOpen" class="ri-close-line text-2xl text-[var(--primary)]"></i>
                     </button>
@@ -461,48 +535,130 @@
             
             <!-- Mobile Menu -->
             <div x-show="mobileMenuOpen" 
-                 x-transition:enter="transition ease-out duration-200"
-                 x-transition:enter-start="opacity-0 transform -translate-y-10"
-                 x-transition:enter-end="opacity-100 transform translate-y-0"
-                 x-transition:leave="transition ease-in duration-150"
-                 x-transition:leave-start="opacity-100 transform translate-y-0"
-                 x-transition:leave-end="opacity-0 transform -translate-y-10"
-                 class="md:hidden fixed inset-0 z-50"
-                 style="backdrop-filter: blur(8px);">
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 transform scale-95"
+                 x-transition:enter-end="opacity-100 transform scale-100"
+                 x-transition:leave="transition ease-in duration-200"
+                 x-transition:leave-start="opacity-100 transform scale-100"
+                 x-transition:leave-end="opacity-0 transform scale-95"
+                 class="md:hidden fixed inset-0 z-50 flex flex-col"
+                 role="dialog"
+                 aria-modal="true"
+                 aria-labelledby="mobile-menu-title"
+                 style="transform: translateZ(0); -webkit-backface-visibility: hidden;">
                 
-                <!-- Overlay de fundo -->
-                <div class="absolute inset-0 bg-[var(--darker)] bg-opacity-95"></div>
+                <!-- Dark overlay background -->
+                <div class="absolute inset-0 bg-[#0a0e14] bg-opacity-98"></div>
                 
-                <!-- Conteúdo do menu -->
-                <div class="relative z-10 flex flex-col h-full">
-                    <div class="flex justify-between items-center p-6 border-b border-[var(--border)]">
-                        <a href="#" class="text-xl font-bold text-white">
-                            Cristiano <span class="text-primary text-[var(--primary)]">Arêdes</span>
-                        </a>
-                        <button @click="mobileMenuOpen = false" class="text-white p-2 rounded-lg hover:bg-[var(--card)]">
-                            <i class="ri-close-line text-2xl"></i>
+                <!-- Menu content -->
+                <div class="relative z-10 flex flex-col h-full overflow-y-auto">
+                    <!-- Header with close button -->
+                    <div class="flex justify-between items-center p-5 border-b border-[rgba(255,255,255,0.1)]">
+                        <div class="text-xl font-bold">
+                            <span class="text-white">Cristiano</span>
+                            <span class="text-[var(--primary)]">Arêdes</span>
+                        </div>
+                        <button @click="mobileMenuOpen = false" 
+                                class="w-12 h-12 rounded-full bg-[rgba(44,48,56,0.8)] border border-[rgba(255,255,255,0.1)] flex items-center justify-center
+                                       hover:bg-[rgba(60,67,77,0.8)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-opacity-50 transition-all"
+                                aria-label="Close menu">
+                            <i class="ri-close-line text-xl"></i>
                         </button>
                     </div>
                     
-                    <div class="flex flex-col items-center justify-center flex-1 space-y-6 p-8 overflow-y-auto">
-                        <!-- Melhorando os links do menu mobile -->
-                        <a href="#about" @click="mobileMenuOpen = false" class="text-xl text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 transform hover:text-[var(--primary)] px-4 py-2 rounded-lg hover:bg-[var(--dark)] hover:bg-opacity-30" x-text="translations[currentLanguage].menu.about">About</a>
-                        <a href="#skills" @click="mobileMenuOpen = false" class="text-xl text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 transform hover:text-[var(--primary)] px-4 py-2 rounded-lg hover:bg-[var(--dark)] hover:bg-opacity-30" x-text="translations[currentLanguage].menu.skills">Skills</a>
-                        <a href="#projects" @click="mobileMenuOpen = false" class="text-xl text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 transform hover:text-[var(--primary)] px-4 py-2 rounded-lg hover:bg-[var(--dark)] hover:bg-opacity-30" x-text="translations[currentLanguage].menu.projects">Projects</a>
-                        <a href="#blog" @click="mobileMenuOpen = false" class="text-xl text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 transform hover:text-[var(--primary)] px-4 py-2 rounded-lg hover:bg-[var(--dark)] hover:bg-opacity-30" x-text="translations[currentLanguage].menu.blog">Blog</a>
-                        <a href="#contact" @click="mobileMenuOpen = false" class="text-xl text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 transform hover:text-[var(--primary)] px-4 py-2 rounded-lg hover:bg-[var(--dark)] hover:bg-opacity-30" x-text="translations[currentLanguage].menu.contact">Contact</a>
-                        
-                        <a href="https://www.linkedin.com/in/cristianoaredes/" class="btn btn-primary text-lg inline-flex items-center mt-8 w-full justify-center" target="_blank">
-                            <i class="ri-linkedin-fill mr-2"></i> <span x-text="translations[currentLanguage].menu.connect_linkedin">Connect on LinkedIn</span>
-                        </a>
-                        
-                        <!-- Language Selector para Mobile -->
-                        <div class="flex mt-8 border-t border-[var(--border)] pt-8 w-full justify-center">
-                            <button @click="currentLanguage = 'en'" class="px-8 py-3 rounded text-base transition-colors mx-2" 
-                                    :class="currentLanguage === 'en' ? 'bg-[var(--primary)] text-white' : 'text-gray-400 hover:text-white border border-[var(--border)]'">English</button>
-                            <button @click="currentLanguage = 'pt'" class="px-8 py-3 rounded text-base transition-colors mx-2" 
-                                    :class="currentLanguage === 'pt' ? 'bg-[var(--primary)] text-white' : 'text-gray-400 hover:text-white border border-[var(--border)]'">Português</button>
+                    <!-- Language Selector -->
+                    <div class="flex justify-center mt-6 mb-4">
+                        <div class="flex bg-[rgba(66,153,225,0.15)] rounded-full p-1">
+                            <button @click="currentLanguage = 'en'" 
+                                    class="px-6 py-2 rounded-full transition-colors text-center" 
+                                    :class="currentLanguage === 'en' ? 'bg-[var(--primary)] text-white' : 'text-gray-400 hover:text-white'"
+                                    aria-label="Switch to English">English</button>
+                            <button @click="currentLanguage = 'pt'" 
+                                    class="px-6 py-2 rounded-full transition-colors text-center" 
+                                    :class="currentLanguage === 'pt' ? 'bg-[var(--primary)] text-white' : 'text-gray-400 hover:text-white'"
+                                    aria-label="Switch to Portuguese">Português</button>
                         </div>
+                    </div>
+                    
+                    <!-- Main Navigation Links -->
+                    <nav class="flex flex-col mx-5 mb-6" id="mobile-menu-title">
+                        <a href="#about" @click="mobileMenuOpen = false" 
+                           class="py-4 text-xl font-medium w-full text-center border-b border-[rgba(255,255,255,0.05)]
+                                  hover:text-[var(--primary)] focus:outline-none focus:text-[var(--primary)] transition-colors"
+                           x-text="translations[currentLanguage].menu.about">About</a>
+                        <a href="#skills" @click="mobileMenuOpen = false" 
+                           class="py-4 text-xl font-medium w-full text-center border-b border-[rgba(255,255,255,0.05)]
+                                  hover:text-[var(--primary)] focus:outline-none focus:text-[var(--primary)] transition-colors"
+                           x-text="translations[currentLanguage].menu.skills">Skills</a>
+                        <a href="#projects" @click="mobileMenuOpen = false" 
+                           class="py-4 text-xl font-medium w-full text-center border-b border-[rgba(255,255,255,0.05)]
+                                  hover:text-[var(--primary)] focus:outline-none focus:text-[var(--primary)] transition-colors"
+                           x-text="translations[currentLanguage].menu.projects">Projects</a>
+                        <a href="#blog" @click="mobileMenuOpen = false" 
+                           class="py-4 text-xl font-medium w-full text-center border-b border-[rgba(255,255,255,0.05)]
+                                  hover:text-[var(--primary)] focus:outline-none focus:text-[var(--primary)] transition-colors"
+                           x-text="translations[currentLanguage].menu.blog">Blog</a>
+                        <a href="#contact" @click="mobileMenuOpen = false" 
+                           class="py-4 text-xl font-medium w-full text-center
+                                  hover:text-[var(--primary)] focus:outline-none focus:text-[var(--primary)] transition-colors"
+                           x-text="translations[currentLanguage].menu.contact">Contact</a>
+                    </nav>
+                    
+                    <!-- Brief intro -->
+                    <div class="px-5 py-3 text-center">
+                        <h3 class="text-2xl font-bold mb-2">
+                            <span x-text="translations[currentLanguage].hero.greeting">Hi, I'm</span> 
+                            <span class="text-[var(--primary)]">Cristiano</span>
+                        </h3>
+                        <p class="text-gray-400 mb-6 text-base" x-text="translations[currentLanguage].hero.description">
+                            Bridging the gap between cutting-edge AI technologies and intuitive mobile experiences.
+                        </p>
+                    </div>
+                    
+                    <!-- Action buttons -->
+                    <div class="px-5 mb-6">
+                        <a href="#projects" @click="mobileMenuOpen = false" 
+                           class="btn btn-outline py-3 w-full justify-center mb-3 hover:bg-[rgba(88,166,255,0.1)] transition-all">
+                            <i class="ri-github-line mr-2"></i> 
+                            <span x-text="translations[currentLanguage].hero.view_projects">View Projects</span>
+                        </a>
+                        <a href="#contact" @click="mobileMenuOpen = false" 
+                           class="btn btn-primary py-3 w-full justify-center hover:bg-[var(--secondary)] transition-all">
+                            <i class="ri-mail-line mr-2"></i> 
+                            <span x-text="translations[currentLanguage].hero.get_in_touch">Get in Touch</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Social links -->
+                    <div class="flex justify-center gap-4 mt-auto pb-8 pt-4 border-t border-[rgba(255,255,255,0.05)]">
+                        <a href="https://www.linkedin.com/in/cristianoaredes/" target="_blank" 
+                           class="w-12 h-12 rounded-full border border-[rgba(255,255,255,0.1)] bg-[rgba(20,25,30,0.5)] 
+                                  flex items-center justify-center hover:bg-[rgba(30,38,45,0.8)] hover:border-[var(--primary)]
+                                  transition-all focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-opacity-50"
+                           aria-label="LinkedIn Profile">
+                            <i class="ri-linkedin-fill text-xl"></i>
+                        </a>
+                        <a href="https://twitter.com/cristianoaredes" target="_blank" 
+                           class="w-12 h-12 rounded-full border border-[rgba(255,255,255,0.1)] bg-[rgba(20,25,30,0.5)] 
+                                  flex items-center justify-center hover:bg-[rgba(30,38,45,0.8)] hover:border-[var(--primary)]
+                                  transition-all focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-opacity-50"
+                           aria-label="Twitter Profile">
+                            <i class="ri-twitter-fill text-xl"></i>
+                        </a>
+                        <a href="https://github.com/cristianoaredes" target="_blank" 
+                           class="w-12 h-12 rounded-full border border-[rgba(255,255,255,0.1)] bg-[rgba(20,25,30,0.5)] 
+                                  flex items-center justify-center hover:bg-[rgba(30,38,45,0.8)] hover:border-[var(--primary)]
+                                  transition-all focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-opacity-50"
+                           aria-label="GitHub Profile">
+                            <i class="ri-github-fill text-xl"></i>
+                        </a>
+                        <a href="https://medium.com/@cristianoaredes" target="_blank" 
+                           class="w-12 h-12 rounded-full border border-[rgba(255,255,255,0.1)] bg-[rgba(20,25,30,0.5)] 
+                                  flex items-center justify-center hover:bg-[rgba(30,38,45,0.8)] hover:border-[var(--primary)]
+                                  transition-all focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-opacity-50"
+                           aria-label="Medium Profile">
+                            <i class="ri-medium-fill text-xl"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -555,7 +711,7 @@
                 <div class="flex justify-center md:hidden mt-8 mb-12" data-aos="fade-up">
                     <div class="relative w-48 h-48">
                         <div class="absolute w-full h-full bg-[var(--primary)] opacity-10 rounded-full animate-pulse"></div>
-                        <img src="https://avatars.githubusercontent.com/u/4899347?v=4&size=256" alt="Cristiano Arêdes" class="rounded-full border-4 border-[var(--primary)] shadow-xl w-full h-full object-cover z-20 relative">
+                        <img src="https://avatars.githubusercontent.com/u/4899347?v=4&size=256" alt="Cristiano Arêdes" class="rounded-full border-4 border-[var(--primary)] shadow-xl w-full h-full object-cover z-20 relative" width="192" height="192" loading="lazy">
                     </div>
                 </div>
                 
@@ -566,7 +722,7 @@
                         <div class="hexagon absolute bottom-10 left-10 w-24 h-24 bg-[var(--primary)] opacity-10 rounded-xl transform rotate-12 animate-pulse" style="animation-delay: 1s"></div>
                         <div class="hexagon absolute top-40 left-20 w-16 h-16 bg-[var(--secondary)] opacity-20 rounded-xl transform -rotate-12 animate-pulse" style="animation-delay: 2s"></div>
                         
-                        <img src="https://avatars.githubusercontent.com/u/4899347?v=4&size=256" alt="Cristiano Arêdes" class="rounded-full border-4 border-[var(--card)] shadow-xl mx-auto w-64 h-64 object-cover z-20 relative">
+                        <img src="https://avatars.githubusercontent.com/u/4899347?v=4&size=256" alt="Cristiano Arêdes" class="rounded-full border-4 border-[var(--card)] shadow-xl mx-auto w-64 h-64 object-cover z-20 relative" width="256" height="256" loading="lazy">
                         
                         <div class="absolute -right-5 top-10 bg-[var(--card)] rounded-lg p-3 shadow-lg border border-[var(--border)] animate-bounce" style="animation-duration: 3s">
                             <div class="text-[var(--primary)]"><i class="ri-flutter-fill text-3xl"></i></div>
@@ -607,7 +763,7 @@
                         
                         <div class="relative z-10 bg-gradient-to-br from-[var(--card)] to-[rgba(22,27,34,0.8)] p-4 md:p-6 rounded-xl border border-[var(--border)] shadow-xl">
                             <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full overflow-hidden border-4 border-[var(--primary)] shadow-lg mb-6">
-                                <img src="https://avatars.githubusercontent.com/u/4899347?v=4&size=256" alt="Cristiano Arêdes" class="w-full h-full object-cover">
+                                <img src="https://avatars.githubusercontent.com/u/4899347?v=4&size=256" alt="Cristiano Arêdes" class="w-full h-full object-cover" width="112" height="112" loading="lazy">
                             </div>
                             
                             <blockquote class="border-l-4 border-[var(--primary)] pl-4 italic text-gray-400 relative mb-6">
@@ -618,7 +774,7 @@
                             </blockquote>
                             
                             <div class="flex justify-center">
-                                <a href="/resume.pdf" target="_blank" class="btn btn-primary inline-flex items-center text-sm">
+                                <a href="cv.pdf" download class="btn btn-primary inline-flex items-center text-sm">
                                     <i class="ri-file-text-line mr-2"></i> <span x-text="translations[currentLanguage].sections.about.download_resume">Download Resume</span>
                                 </a>
                             </div>
@@ -824,8 +980,13 @@
     <section id="projects" class="py-20 bg-[var(--dark)]">
         <div class="container px-4 md:px-8">
             <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4" x-text="translations[currentLanguage].sections.projects.title">Featured Projects</h2>
-                <div class="w-24 h-1 bg-[var(--primary)] mx-auto rounded-full"></div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4" x-text="translations[currentLanguage].sections.projects.title">Featured Projects</h2>
+                
+                <!-- Linha de destaque estilizada -->
+                <div class="flex justify-center mb-4">
+                    <div class="w-32 h-1 bg-gradient-to-r from-[#5a7dfc] to-[#8a67f9] rounded-full"></div>
+                </div>
+                
                 <p class="text-gray-400 mt-6 max-w-2xl mx-auto" x-text="translations[currentLanguage].sections.projects.subtitle">
                     A selection of my recent work, focusing on mobile applications and AI integrations
                 </p>
@@ -859,6 +1020,12 @@
                             <span class="px-2 py-1 bg-purple-900 bg-opacity-30 text-purple-400 rounded text-xs">Modular</span>
                             <span class="px-2 py-1 bg-green-900 bg-opacity-30 text-green-400 rounded text-xs">BLoC</span>
                         </div>
+                        
+                        <div class="mt-4">
+                            <a href="https://github.com/cristianoaredes/super-app-flutter-sample" target="_blank" class="text-[var(--primary)] hover:underline inline-flex items-center">
+                                <i class="ri-github-fill mr-1"></i> View on GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
@@ -888,6 +1055,12 @@
                             <span class="px-2 py-1 bg-blue-900 bg-opacity-30 text-blue-400 rounded text-xs">Python</span>
                             <span class="px-2 py-1 bg-teal-900 bg-opacity-30 text-teal-400 rounded text-xs">FastAPI</span>
                             <span class="px-2 py-1 bg-purple-900 bg-opacity-30 text-purple-400 rounded text-xs">Docling</span>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <a href="https://github.com/cristianoaredes/AnythingToLLMs.txt" target="_blank" class="text-[var(--primary)] hover:underline inline-flex items-center">
+                                <i class="ri-github-fill mr-1"></i> View on GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -919,12 +1092,18 @@
                             <span class="px-2 py-1 bg-blue-900 bg-opacity-30 text-blue-400 rounded text-xs">Flutter</span>
                             <span class="px-2 py-1 bg-red-900 bg-opacity-30 text-red-400 rounded text-xs">AI/ML</span>
                         </div>
+                        
+                        <div class="mt-4">
+                            <a href="https://recyco.app" target="_blank" class="text-[var(--primary)] hover:underline inline-flex items-center">
+                                <i class="ri-external-link-fill mr-1"></i> Visit Website
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <div class="text-center mt-12" data-aos="fade-up">
-                <a href="#contact" class="btn btn-primary">
+                <a href="#contact" class="btn btn-primary" aria-label="Discuss a Project">
                     <i class="ri-discuss-line mr-2"></i> <span x-text="translations[currentLanguage].sections.projects.discuss">Discuss a Project</span>
                 </a>
             </div>
@@ -943,10 +1122,28 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <!-- Card de Blog 1 -->
+                <!-- Card de Blog 1 - NOVO ARTIGO -->
                 <div class="card flex flex-col h-full" data-aos="fade-up" data-aos-delay="100">
                     <div class="h-48 relative overflow-hidden">
-                        <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*F6q9XHJQIjl7Ln_5rz9G1Q.png" alt="LLMs.txt" class="w-full h-full object-cover rounded-t-lg transition-transform hover:scale-105">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*xkLKwa_BqUlyjJ60mJRKQA.png" alt="OpenAI Codex CLI" class="w-full h-full object-cover rounded-t-lg transition-transform hover:scale-105" loading="lazy" width="400" height="200">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[var(--darker)] via-transparent to-transparent opacity-70"></div>
+                    </div>
+                    <div class="p-5 md:p-6 flex-grow flex flex-col">
+                        <p class="text-gray-400 text-xs mb-2">Oct 15, 2023 · 7 min read</p>
+                        <h3 class="text-lg md:text-xl font-bold text-[var(--light)] mb-3">OpenAI Codex CLI: Guia de IA no Terminal para Devs</h3>
+                        <p class="text-gray-300 mb-4 flex-grow">
+                            Como utilizar o poder da IA diretamente no terminal para aumentar a produtividade no desenvolvimento de software, com foco no OpenAI Codex.
+                        </p>
+                        <a href="https://medium.com/@cristianoaredes/openai-codex-cli-guia-de-ia-no-terminal-para-devs-3b9830d31abc" target="_blank" class="text-[var(--primary)] font-medium hover:underline inline-flex items-center mt-2">
+                            <span x-text="translations[currentLanguage].sections.blog.read_article">Read Article</span> <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Card de Blog 2 -->
+                <div class="card flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*F6q9XHJQIjl7Ln_5rz9G1Q.png" alt="LLMs.txt" class="w-full h-full object-cover rounded-t-lg transition-transform hover:scale-105" loading="lazy" width="400" height="200">
                         <div class="absolute inset-0 bg-gradient-to-t from-[var(--darker)] via-transparent to-transparent opacity-70"></div>
                     </div>
                     <div class="p-5 md:p-6 flex-grow flex flex-col">
@@ -961,10 +1158,10 @@
                     </div>
                 </div>
                 
-                <!-- Card de Blog 2 -->
-                <div class="card flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
+                <!-- Card de Blog 3 -->
+                <div class="card flex flex-col h-full" data-aos="fade-up" data-aos-delay="300">
                     <div class="h-48 relative overflow-hidden">
-                        <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*axxRTz-J-Co-Tj0N8MUcrw.png" alt="MCP and A2A" class="w-full h-full object-cover rounded-t-lg transition-transform hover:scale-105">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*axxRTz-J-Co-Tj0N8MUcrw.png" alt="MCP and A2A" class="w-full h-full object-cover rounded-t-lg transition-transform hover:scale-105" loading="lazy" width="400" height="200">
                         <div class="absolute inset-0 bg-gradient-to-t from-[var(--darker)] via-transparent to-transparent opacity-70"></div>
                     </div>
                     <div class="p-5 md:p-6 flex-grow flex flex-col">
@@ -974,24 +1171,6 @@
                             Analysis of new paradigms of communication between applications, exploring the Machine Centric Protocol (MCP) and App-to-App (A2A) communication.
                         </p>
                         <a href="https://medium.com/@cristianoaredes/mcp-e-a2a-como-protocolos-emergentes-est%C3%A3o-remodelando-o-desenvolvimento-de-software-a0431e096c53" target="_blank" class="text-[var(--primary)] font-medium hover:underline inline-flex items-center mt-2">
-                            <span x-text="translations[currentLanguage].sections.blog.read_article">Read Article</span> <i class="ri-arrow-right-line ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Card de Blog 3 -->
-                <div class="card flex flex-col h-full" data-aos="fade-up" data-aos-delay="300">
-                    <div class="h-48 relative overflow-hidden">
-                        <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*96dza93qTOLxZron7LAyFw.png" alt="AI IDEs" class="w-full h-full object-cover rounded-t-lg transition-transform hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[var(--darker)] via-transparent to-transparent opacity-70"></div>
-                    </div>
-                    <div class="p-5 md:p-6 flex-grow flex flex-col">
-                        <p class="text-gray-400 text-xs mb-2">Mar 7, 2023 · 12 min read</p>
-                        <h3 class="text-lg md:text-xl font-bold text-[var(--light)] mb-3">The AI IDE War: The New Technology Battlefield</h3>
-                        <p class="text-gray-300 mb-4 flex-grow">
-                            How AI is transforming the IDE and development landscape, comparing tools like GitHub Copilot, Cursor, and JetBrains AI Assistant.
-                        </p>
-                        <a href="https://medium.com/@cristianoaredes/a-guerra-das-ides-com-ia-o-novo-campo-de-batalha-tecnol%C3%B3gico-e0389ecda32c" target="_blank" class="text-[var(--primary)] font-medium hover:underline inline-flex items-center mt-2">
                             <span x-text="translations[currentLanguage].sections.blog.read_article">Read Article</span> <i class="ri-arrow-right-line ml-1"></i>
                         </a>
                     </div>
@@ -1160,19 +1339,52 @@
     </footer>
 
     <!-- Botão para voltar ao topo -->
-    <button id="backToTop" class="fixed bottom-6 right-6 z-50 bg-[var(--primary)] text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transform transition-all duration-300 scale-0 hover:scale-110 focus:outline-none">
+    <button id="backToTop" class="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-[#5a7dfc] to-[#8a67f9] text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center transform transition-all duration-300 scale-0 hover:scale-110 focus:outline-none backdrop-blur-sm">
         <i class="ri-arrow-up-line text-2xl"></i>
     </button>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS
-            AOS.init({
-                once: true,
-                duration: 800,
-                easing: 'ease-in-out',
-                disable: 'mobile' // Desativa em dispositivos móveis para melhor performance
-            });
+            // Detectar dispositivos de baixa potência
+            const isLowPoweredDevice = () => {
+                const userAgent = navigator.userAgent;
+                const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+                const isOlderDevice = /iPhone OS [5-9]_|Android [2-5]\./i.test(userAgent);
+                
+                // Se estiver disponível, use o hardware concurrency para detectar CPUs mais fracos
+                const hasLowCPU = navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4;
+                
+                return (isMobile && isOlderDevice) || hasLowCPU;
+            };
+            
+            // Reduzir animações em dispositivos de baixa potência
+            if (isLowPoweredDevice()) {
+                document.body.classList.add('reduced-motion');
+                
+                // Desativar todas as animações de pulse e bounce
+                document.querySelectorAll('.animate-pulse, .animate-bounce').forEach(el => {
+                    el.classList.remove('animate-pulse', 'animate-bounce');
+                });
+                
+                // Configurar AOS para ser mais leve
+                setTimeout(() => {
+                    AOS.init({
+                        once: true,
+                        duration: 500,
+                        disable: true  // Desativar completamente em dispositivos de baixa potência
+                    });
+                }, 100);
+            } else {
+                // Inicializar AOS depois de um pequeno atraso para não bloquear o carregamento inicial
+                setTimeout(() => {
+                    AOS.init({
+                        once: true,
+                        duration: 800,
+                        easing: 'ease-in-out',
+                        disable: 'mobile' // Desativa em dispositivos móveis para melhor performance
+                    });
+                }, 100);
+            }
             
             // Controle de scroll para o menu mobile
             const body = document.body;
@@ -1363,6 +1575,54 @@
                 });
             });
         });
+    </script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Cristiano Arêdes Costa",
+        "givenName": "Cristiano",
+        "familyName": "Arêdes Costa",
+        "jobTitle": "Mobile Architect & AI Engineer",
+        "url": "https://cristianoaredes.github.io/",
+        "image": "https://avatars.githubusercontent.com/u/4899347?v=4",
+        "email": "cristianoaredes@icloud.com",
+        "telephone": "+5511952732247",
+        "sameAs": [
+            "https://www.linkedin.com/in/cristianoaredes/",
+            "https://twitter.com/cristianoaredes",
+            "https://github.com/cristianoaredes",
+            "https://medium.com/@cristianoaredes"
+        ],
+        "knowsLanguage": ["English", "Portuguese"],
+        "knowsAbout": ["Mobile Development", "Flutter", "Swift", "Kotlin", "Artificial Intelligence", "LangChain", "RAG", "Software Architecture"],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Recyco.app",
+            "url": "https://recyco.app"
+        },
+        "description": "Mobile Architect & AI Engineer specialized in Flutter, Swift, Kotlin and LangChain. Creating solutions that solve real problems at scale."
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Cristiano Arêdes - Portfolio",
+        "url": "https://cristianoaredes.github.io/",
+        "description": "Professional portfolio of Cristiano Arêdes Costa, Mobile Architect & AI Engineer",
+        "author": {
+            "@type": "Person",
+            "name": "Cristiano Arêdes Costa"
+        },
+        "inLanguage": ["en", "pt-BR"],
+        "copyrightYear": "2023",
+        "headline": "Cristiano Arêdes - Mobile Architect & AI Engineer",
+        "keywords": "Mobile Architect, AI Engineer, Flutter, Swift, Kotlin, LangChain"
+    }
     </script>
 </body>
 </html>
