@@ -14,14 +14,14 @@
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=cristianoaredes&show_icons=true&theme=tokyonight" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api?username=cristianoaredes&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&ring_color=58A6FF&text_color=c9d1d9&icon_color=58A6FF&title_color=58A6FF&bg_color=0d1117" alt="GitHub Stats" />
 </div>
 
 ---
 
 ## 📖 About Me
 
-<img align="right" width="300" src="https://github-readme-streak-stats.herokuapp.com/?user=cristianoaredes&theme=tokyonight" />
+<img align="right" width="320" src="https://github-readme-streak-stats.herokuapp.com/?user=cristianoaredes&theme=github-dark&hide_border=true&stroke=58A6FF&ring=58A6FF&fire=58A6FF&currStreakNum=c9d1d9&sideNums=c9d1d9&currStreakLabel=58A6FF&background=0d1117&dates=c9d1d9" />
 
 I'm a software engineer with **14+ years** of experience in mobile and backend development. Specialist in **application architecture**, scalability, and performance, with solid experience in **fintech**, **health-tech**, and **AI-driven products**. 
 
@@ -75,19 +75,20 @@ Currently, I lead cutting-edge projects involving **Flutter**, **Swift/Kotlin**,
 
 ## 🚀 Featured Projects
 
-<div class="projects-grid">
+<div align="center" class="projects-grid">
 
   <a href="https://github.com/cristianoaredes/super-app-flutter-sample">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cristianoaredes&repo=super-app-flutter-sample&theme=tokyonight" />
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cristianoaredes&repo=super-app-flutter-sample&theme=github-dark&hide_border=true&title_color=58A6FF&text_color=c9d1d9&icon_color=58A6FF&bg_color=0d1117" />
   </a>
   <a href="https://github.com/cristianoaredes/AnythingToLLMs.txt">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cristianoaredes&repo=AnythingToLLMs.txt&theme=tokyonight" />
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cristianoaredes&repo=AnythingToLLMs.txt&theme=github-dark&hide_border=true&title_color=58A6FF&text_color=c9d1d9&icon_color=58A6FF&bg_color=0d1117" />
   </a>
+
   <a href="https://github.com/cristianoaredes/NodeForge-API">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cristianoaredes&repo=NodeForge-API&theme=tokyonight" />
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cristianoaredes&repo=NodeForge-API&theme=github-dark&hide_border=true&title_color=58A6FF&text_color=c9d1d9&icon_color=58A6FF&bg_color=0d1117" />
   </a>
   <a href="https://github.com/cristianoaredes/codemodel-cli">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cristianoaredes&repo=codemodel-cli&theme=tokyonight" />
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cristianoaredes&repo=codemodel-cli&theme=github-dark&hide_border=true&title_color=58A6FF&text_color=c9d1d9&icon_color=58A6FF&bg_color=0d1117" />
   </a>
 
 </div>
@@ -151,9 +152,15 @@ Currently, I lead cutting-edge projects involving **Flutter**, **Swift/Kotlin**,
 
 <div align="center">
   
-  <img src="https://komarev.com/ghpvc/?username=cristianoaredes&style=flat-square&color=blue" alt="Profile Views"/>
+  <img src="https://komarev.com/ghpvc/?username=cristianoaredes&style=for-the-badge&color=58A6FF" alt="Profile Views"/>
   
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=cristianoaredes&layout=compact&theme=tokyonight" alt="Top Languages" />
+  <br><br>
+  
+  <img width="495" src="https://github-readme-stats.vercel.app/api/top-langs/?username=cristianoaredes&layout=compact&hide_border=true&theme=github-dark&title_color=58A6FF&text_color=c9d1d9&icon_color=58A6FF&bg_color=0d1117" alt="Top Languages" />
+  
+  <br>
+  
+  <img width="495" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=cristianoaredes&theme=github_dark&utcOffset=3" alt="Coding Activity"/>
   
 </div>
 
