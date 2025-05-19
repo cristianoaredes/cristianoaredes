@@ -1,8 +1,8 @@
 # <div align="center">👨‍💻 Cristiano Arêdes Costa</div>
 
-## 🧪 End-to-End Testing with Playwright
+## 🧪 End-to-End Testing with Playwright and MCP
 
-This project includes automated end-to-end testing using Playwright to ensure the website functions correctly.
+This project includes automated end-to-end testing using Playwright with Model Context Protocol (MCP) integration, enabling AI-assisted testing capabilities.
 
 ### 🚀 Quick Start
 
@@ -16,19 +16,22 @@ This project includes automated end-to-end testing using Playwright to ensure th
    npx playwright install --with-deps
    ```
 
-3. **Run Tests**
+3. **Run Tests with MCP**
    ```bash
-   # Start the server and run tests
-   ./scripts/setup-mcp.sh test
+   # Start MCP server
+   npm run start:mcp
+   
+   # In another terminal, run tests
+   npm run test:mcp
    ```
 
-   Or manually:
+4. **Run Tests Normally**
    ```bash
    # Start the development server
-   npx serve -s . -l 3000 &
+   npm start &
    
    # Run tests
-   npx playwright test
+   npm test
    
    # When done, stop the server
    kill %1
@@ -36,10 +39,12 @@ This project includes automated end-to-end testing using Playwright to ensure th
 
 ### 🧪 Available Test Scripts
 
-- `npm test` - Run Playwright tests
+- `npm test` - Run standard Playwright tests
+- `npm run test:mcp` - Run tests with MCP server
 - `npm run test:ui` - Open Playwright UI
 - `npm run test:debug` - Run in debug mode
 - `npm run test:report` - Show test report
+- `npm start:mcp` - Start MCP server
 
 ### 🔍 Debugging
 
@@ -48,7 +53,12 @@ This project includes automated end-to-end testing using Playwright to ensure th
 
 ### 🛠 CI/CD Integration
 
-This project includes a GitHub Actions workflow that runs Playwright tests on every push to master and pull requests.
+This project includes a GitHub Actions workflow that runs Playwright tests with MCP integration on every push to master and pull requests. The workflow:
+
+1. Sets up MCP server
+2. Serves the website
+3. Runs tests with MCP integration
+4. Uploads test results and traces as artifacts
 
 ---
 

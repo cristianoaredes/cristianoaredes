@@ -5,10 +5,12 @@
   "description": "Personal website with Playwright E2E testing",
   "scripts": {
     "test": "playwright test",
+    "test:mcp": "MCP_URL=http://localhost:7342 playwright test",
     "test:ui": "playwright test --ui",
     "test:debug": "PWDEBUG=1 playwright test",
     "test:report": "playwright show-report",
     "start": "serve -s . -l 3000",
+    "start:mcp": "playwright mcp",
     "prepare": "npx playwright install --with-deps"
   },
   "devDependencies": {
