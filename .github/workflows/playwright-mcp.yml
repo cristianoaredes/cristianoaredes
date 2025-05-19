@@ -18,17 +18,6 @@ jobs:
     timeout-minutes: 30
 
     services:
-      # MCP Server
-      mcp:
-        image: mcr.microsoft.com/playwright:v1.44.0-jammy
-        ports:
-          - 7342:7342
-        volumes:
-          - ${{ github.workspace }}/.cache/ms-playwright:/ms-playwright
-        options: >-
-          --entrypoint "/bin/sh"
-          -c "npx playwright mcp --port 7342"
-
       # Test website
       website:
         image: mcr.microsoft.com/playwright:v1.44.0-jammy
@@ -59,11 +48,24 @@ jobs:
       env:
         PLAYWRIGHT_BROWSERS_PATH: ~/.cache/ms-playwright
 
+    - name: Start MCP server
+      run: |
+        npx playwright mcp --port 7342 > mcp.log 2>&1 &
+        echo "MCP_PID=$!" >> $GITHUB_ENV
+        sleep 5  # Give MCP server time to start
+
     - name: Run Playwright tests with MCP
       run: npm run test:mcp
       env:
-        BASE_URL: http://website:3000
-        MCP_URL: http://mcp:7342
+        BASE_URL: http://localhost:3000
+        MCP_URL: http://localhost:7342
+
+    - name: Stop MCP server
+      if: always()
+      run: |
+        if [ -n "$MCP_PID" ]; then
+          kill $MCP_PID || true
+        fi
 
     - name: Upload test results
       if: always()
