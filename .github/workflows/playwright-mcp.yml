@@ -50,15 +50,47 @@ jobs:
 
     - name: Start MCP server
       run: |
-        npx @microsoft/playwright-mcp --port 7342 > mcp.log 2>&1 &
-        echo "MCP_PID=$!" >> $GITHUB_ENV
-        sleep 5  # Give MCP server time to start
+        retries=5
+        while [ $retries -gt 0 ]; do
+          npx @microsoft/playwright-mcp --port 7342 > mcp.log 2>&1 &
+          MCP_PID=$!
+          echo "MCP_PID=$MCP_PID" >> $GITHUB_ENV
+          sleep 5  # Give MCP server time to start
+          if curl -s http://localhost:7342 > /dev/null; then
+            echo "MCP server started successfully"
+            break
+          else
+            echo "MCP server failed to start, retrying..."
+            kill $MCP_PID 2>/dev/null || true
+            retries=$((retries-1))
+            sleep 5
+          fi
+        done
+        if [ $retries -eq 0 ]; then
+          echo "MCP server failed to start after multiple attempts"
+          exit 1
+        fi
+
+    - name: Verify MCP server is running
+      run: |
+        curl -s http://localhost:7342 > /dev/null || (echo "MCP server failed to start" && exit 1)
 
     - name: Run Playwright tests with MCP
       run: npm run test:mcp
       env:
         BASE_URL: http://localhost:3000
         MCP_URL: http://localhost:7342
+
+    - name: Periodic health check for MCP server
+      run: |
+        while true; do
+          if ! curl -s http://localhost:7342 > /dev/null; then
+            echo "MCP server is not responding"
+            exit 1
+          fi
+          sleep 60
+        done &
+        echo "HEALTH_CHECK_PID=$!" >> $GITHUB_ENV
 
     - name: Stop servers and show logs
       if: always()
@@ -73,6 +105,12 @@ jobs:
         if [ -n "$SERVE_PID" ]; then
           echo "Stopping website server (PID: $SERVE_PID)"
           kill $SERVE_PID 2>/dev/null || true
+        fi
+        
+        # Stop health check if running
+        if [ -n "$HEALTH_CHECK_PID" ]; then
+          echo "Stopping health check (PID: $HEALTH_CHECK_PID)"
+          kill $HEALTH_CHECK_PID 2>/dev/null || true
         fi
         
         # Show logs

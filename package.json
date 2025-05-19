@@ -10,7 +10,9 @@
     "test:debug": "PWDEBUG=1 playwright test",
     "test:report": "playwright show-report",
     "start": "serve -s . -l 3000",
-    "start:mcp": "npx @microsoft/playwright-mcp --port 7342",
+    "start:mcp": "npm run start:mcp:retries",
+    "start:mcp:retries": "retries=5; while [ $retries -gt 0 ]; do npx @microsoft/playwright-mcp --port 7342 > mcp.log 2>&1 & MCP_PID=$!; echo MCP_PID=$MCP_PID; sleep 5; if curl -s http://localhost:7342 > /dev/null; then echo MCP server started successfully; break; else echo MCP server failed to start, retrying...; kill $MCP_PID 2>/dev/null || true; retries=$((retries-1)); sleep 5; fi; done; if [ $retries -eq 0 ]; then echo MCP server failed to start after multiple attempts; exit 1; fi",
+    "test:mcp:health-check": "while true; do if ! curl -s http://localhost:7342 > /dev/null; then echo MCP server is not responding; exit 1; fi; sleep 60; done &",
     "prepare": "npx playwright install --with-deps"
   },
   "devDependencies": {

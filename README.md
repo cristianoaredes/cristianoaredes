@@ -18,11 +18,11 @@ This project includes automated end-to-end testing using Playwright with Model C
 
 3. **Run Tests with MCP**
    ```bash
-   # Start MCP server
-   npm run start:mcp
+   # Start MCP server with retries
+   npm run start:mcp:retries
    
-   # In another terminal, run tests
-   npm run test:mcp
+   # In another terminal, run tests with health checks
+   npm run test:mcp:health-check
    ```
 
 4. **Run Tests Normally**
@@ -45,6 +45,8 @@ This project includes automated end-to-end testing using Playwright with Model C
 - `npm run test:debug` - Run in debug mode
 - `npm run test:report` - Show test report
 - `npm start:mcp` - Start MCP server
+- `npm run start:mcp:retries` - Start MCP server with retries
+- `npm run test:mcp:health-check` - Run tests with MCP integration and health checks
 
 ### 🔍 Debugging
 
