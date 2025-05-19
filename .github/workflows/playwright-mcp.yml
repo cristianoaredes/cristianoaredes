@@ -17,19 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
-    services:
-      # Test website
-      website:
-        image: mcr.microsoft.com/playwright:v1.44.0-jammy
-        ports:
-          - 3000:3000
-        volumes:
-          - ${{ github.workspace }}:/app
-        options: >-
-          --workdir /app
-          --entrypoint "/bin/sh"
-          -c "npx serve -s . -l 3000"
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -39,6 +26,19 @@ jobs:
       with:
         node-version: 18.x
         cache: 'npm'
+
+    - name: Install serve
+      run: npm install -g serve
+
+    - name: Start website server
+      run: |
+        npx serve -s . -l 3000 > serve.log 2>&1 &
+        echo "SERVE_PID=$!" >> $GITHUB_ENV
+        sleep 3  # Give server time to start
+
+    - name: Verify website is running
+      run: |
+        curl -s http://localhost:3000 > /dev/null || (echo "Website server failed to start" && exit 1)
 
     - name: Install dependencies
       run: npm ci
@@ -60,18 +60,27 @@ jobs:
         BASE_URL: http://localhost:3000
         MCP_URL: http://localhost:7342
 
-    - name: Stop MCP server
+    - name: Stop servers and show logs
       if: always()
       run: |
+        # Stop MCP server if running
         if [ -n "$MCP_PID" ]; then
-          kill $MCP_PID || true
+          echo "Stopping MCP server (PID: $MCP_PID)"
+          kill $MCP_PID 2>/dev/null || true
         fi
         
-    - name: Show MCP server logs
-      if: always()
-      run: |
-        echo "=== MCP Server Logs ==="
-        cat mcp.log || true
+        # Stop website server if running
+        if [ -n "$SERVE_PID" ]; then
+          echo "Stopping website server (PID: $SERVE_PID)"
+          kill $SERVE_PID 2>/dev/null || true
+        fi
+        
+        # Show logs
+        echo "=== Website Server Logs ==="
+        cat serve.log 2>/dev/null || echo "No website server logs found"
+        
+        echo "\n=== MCP Server Logs ==="
+        cat mcp.log 2>/dev/null || echo "No MCP server logs found"
 
     - name: Upload test results
       if: always()
