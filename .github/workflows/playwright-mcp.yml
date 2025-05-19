@@ -1,0 +1,69 @@
+name: Playwright MCP Tests
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  test:
+    name: Playwright MCP Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    services:
+      # Playwright MCP Server
+      playwright-mcp:
+        image: mcp/playwright-mcp:latest
+        ports:
+          - 7342:7342
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
+        volumes:
+          - ~/.cache/ms-playwright:/ms-playwright
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18.x
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright browsers
+      run: npx playwright install --with-deps
+      env:
+        PLAYWRIGHT_BROWSERS_PATH: ~/.cache/ms-playwright
+
+    - name: Run Playwright tests with MCP
+      run: npm run test:e2e:mcp
+      env:
+        BASE_URL: http://localhost:3000
+        MCP_URL: http://localhost:7342
+
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30
+
+    - name: Upload test traces
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: playwright-traces
+        path: test-results/
+        retention-days: 30
