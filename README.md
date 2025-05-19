@@ -1,8 +1,8 @@
 # <div align="center">👨‍💻 Cristiano Arêdes Costa</div>
 
-## 🧪 Playwright MCP Server Integration
+## 🧪 End-to-End Testing with Playwright
 
-This project includes end-to-end testing with Playwright MCP Server for better integration with AI tools.
+This project includes automated end-to-end testing using Playwright to ensure the website functions correctly.
 
 ### 🚀 Quick Start
 
@@ -16,47 +16,39 @@ This project includes end-to-end testing with Playwright MCP Server for better i
    npx playwright install --with-deps
    ```
 
-3. **Start Local Development Server**
+3. **Run Tests**
    ```bash
-   npx serve -s .
+   # Start the server and run tests
+   ./scripts/setup-mcp.sh test
    ```
 
-4. **Run Tests with MCP Server**
-   In a new terminal:
+   Or manually:
    ```bash
-   # Start MCP Server
-   ./scripts/setup-mcp.sh start
+   # Start the development server
+   npx serve -s . -l 3000 &
    
    # Run tests
-   ./scripts/setup-mcp.sh test
+   npx playwright test
    
    # When done, stop the server
-   ./scripts/setup-mcp.sh stop
+   kill %1
    ```
 
 ### 🧪 Available Test Scripts
 
-- `npm test:e2e` - Run Playwright tests normally
-- `npm run test:e2e:mcp` - Run tests with MCP Server
-- `npm run test:e2e:ui` - Open Playwright UI
-- `npm run test:e2e:debug` - Run in debug mode
-- `npm run test:e2e:report` - Show test report
+- `npm test` - Run Playwright tests
+- `npm run test:ui` - Open Playwright UI
+- `npm run test:debug` - Run in debug mode
+- `npm run test:report` - Show test report
 
 ### 🔍 Debugging
 
-- Set `DEBUG=pw:mcp*` for MCP Server debug logs
 - Use `PWDEBUG=1` to open Playwright inspector
 - Check GitHub Actions artifacts for test results and traces
 
 ### 🛠 CI/CD Integration
 
-This project includes GitHub Actions workflow that runs Playwright tests with MCP Server on every push to master and pull requests.
-
-### 🔒 Security
-
-- MCP Server runs in a container with non-root user
-- Network isolation is enabled in production
-- Sensitive data is managed through GitHub Secrets
+This project includes a GitHub Actions workflow that runs Playwright tests on every push to master and pull requests.
 
 ---
 

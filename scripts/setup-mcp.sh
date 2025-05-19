@@ -1,25 +1,21 @@
 #!/bin/bash
 set -e
 
-# Start the Playwright MCP Server
-start_mcp() {
-  echo "🚀 Starting Playwright MCP Server..."
-  docker run -d \
-    --name playwright-mcp \
-    -p 7342:7342 \
-    -v ~/.cache/ms-playwright:/ms-playwright \
-    -e PLAYWRIGHT_BROWSERS_PATH=/ms-playwright \
-    mcp/playwright-mcp:latest
-  
-  echo "✅ Playwright MCP Server is running at http://localhost:7342"
+# Start the local server
+start_server() {
+  echo "🚀 Starting local server..."
+  npx serve -s . -l 3000 &
+  SERVER_PID=$!
+  echo "✅ Local server is running at http://localhost:3000 (PID: $SERVER_PID)"
 }
 
-# Stop and remove the MCP Server container
-stop_mcp() {
-  echo "🛑 Stopping Playwright MCP Server..."
-  docker stop playwright-mcp 2>/dev/null || true
-  docker rm playwright-mcp 2>/dev/null || true
-  echo "✅ Playwright MCP Server stopped"
+# Stop the local server
+stop_server() {
+  if [ ! -z "$SERVER_PID" ]; then
+    echo "🛑 Stopping local server (PID: $SERVER_PID)..."
+    kill $SERVER_PID 2>/dev/null || true
+    echo "✅ Local server stopped"
+  fi
 }
 
 # Install browsers for local development
@@ -29,10 +25,10 @@ install_browsers() {
   echo "✅ Browsers installed"
 }
 
-# Run tests with MCP
+# Run tests
 run_tests() {
-  echo "🧪 Running tests with MCP..."
-  MCP_URL=http://localhost:7342 npx playwright test
+  echo "🧪 Running tests..."
+  npx playwright test
 }
 
 # Show usage
@@ -40,9 +36,9 @@ usage() {
   echo "Usage: $0 [command]"
   echo ""
   echo "Commands:"
-  echo "  start     Start the Playwright MCP Server"
-  echo "  stop      Stop the Playwright MCP Server"
-  echo "  test      Run tests with MCP"
+  echo "  start     Start the local development server"
+  echo "  stop      Stop the local development server"
+  echo "  test      Run tests (starts server if needed)"
   echo "  install   Install Playwright browsers"
   echo "  help      Show this help message"
 }
@@ -50,13 +46,15 @@ usage() {
 # Parse command
 case "$1" in
   start)
-    start_mcp
+    start_server
     ;;
   stop)
-    stop_mcp
+    stop_server
     ;;
   test)
+    start_server
     run_tests
+    stop_server
     ;;
   install)
     install_browsers
