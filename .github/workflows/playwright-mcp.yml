@@ -41,7 +41,9 @@ jobs:
         curl -s http://localhost:3000 > /dev/null || (echo "Website server failed to start" && exit 1)
 
     - name: Install dependencies
-      run: npm ci
+      run: |
+        npm ci
+        npm install github:microsoft/playwright-mcp
 
     - name: Install Playwright browsers
       run: npx playwright install --with-deps
