@@ -1,5 +1,69 @@
 # <div align="center">👨‍💻 Cristiano Arêdes Costa</div>
 
+## 🧪 End-to-End Testing with Playwright and MCP
+
+This project includes automated end-to-end testing using Playwright with Model Context Protocol (MCP) integration, enabling AI-assisted testing capabilities.
+
+### 🚀 Quick Start
+
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+
+2. **Install Playwright Browsers**
+   ```bash
+   npx playwright install --with-deps
+   ```
+
+3. **Run Tests with MCP**
+   ```bash
+   # Start MCP server
+   npm run start:mcp
+   
+   # In another terminal, run tests
+   npm run test:mcp
+   ```
+
+4. **Run Tests Normally**
+   ```bash
+   # Start the development server
+   npm start &
+   
+   # Run tests
+   npm test
+   
+   # When done, stop the server
+   kill %1
+   ```
+
+### 🧪 Available Test Scripts
+
+- `npm test` - Run standard Playwright tests
+- `npm run test:mcp` - Run tests with MCP server
+- `npm run test:ui` - Open Playwright UI
+- `npm run test:debug` - Run in debug mode
+- `npm run test:report` - Show test report
+- `npm start:mcp` - Start MCP server
+
+### 🔍 Debugging
+
+- Use `PWDEBUG=1` to open Playwright inspector
+- Check GitHub Actions artifacts for test results and traces
+
+### 🛠 CI/CD Integration
+
+This project includes a GitHub Actions workflow that runs Playwright tests with MCP integration on every push to master and pull requests. The workflow:
+
+1. Sets up MCP server
+2. Serves the website
+3. Runs tests with MCP integration
+4. Uploads test results and traces as artifacts
+
+---
+
+
+
 <div align="center">
   <h3>Mobile Architect & Senior Software Engineer</h3>
   <p>iOS · Android · Flutter · Swift · Kotlin · Node.js · AI/LLMs · Clean Architecture</p>
@@ -18,6 +82,10 @@
 </div>
 
 ---
+
+## 🔧 Development Tools
+
+- [Playwright MCP Server Documentation](./MCP-SERVER.md) - Run end-to-end tests with MCP integration
 
 ## 📖 About Me
 

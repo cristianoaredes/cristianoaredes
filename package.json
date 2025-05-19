@@ -1,0 +1,28 @@
+{
+  "name": "cristianoaredes-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal website with Playwright E2E testing",
+  "scripts": {
+    "test": "playwright test",
+    "test:mcp": "MCP_URL=http://localhost:7342 playwright test",
+    "test:ui": "playwright test --ui",
+    "test:debug": "PWDEBUG=1 playwright test",
+    "test:report": "playwright show-report",
+    "start": "serve -s . -l 3000",
+    "start:mcp": "npx github:microsoft/playwright-mcp --port 7342",
+    "prepare": "npx playwright install --with-deps"
+  },
+  "devDependencies": {
+    "@playwright/mcp": "github:microsoft/playwright-mcp",
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^22.15.19",
+    "playwright": "^1.44.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "cacheDirectories": [
+    "~/.cache/ms-playwright"
+  ]
+}
