@@ -10,10 +10,11 @@
     "test:debug": "PWDEBUG=1 playwright test",
     "test:report": "playwright show-report",
     "start": "serve -s . -l 3000",
-    "start:mcp": "playwright mcp",
+    "start:mcp": "npx @microsoft/playwright-mcp --port 7342",
     "prepare": "npx playwright install --with-deps"
   },
   "devDependencies": {
+    "@playwright/mcp": "github:microsoft/playwright-mcp",
     "@playwright/test": "^1.44.0",
     "@types/node": "^22.15.19",
     "playwright": "^1.44.0"
