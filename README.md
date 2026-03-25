@@ -12,7 +12,7 @@ My path: started in native mobile (Swift, Kotlin) → scaled Flutter apps to mil
 
 ---
 
-### Orqo — AI Agent Orchestration
+## Orqo — AI Agent Orchestration
 
 A multi-tenant AI gateway I built from scratch. Single Node.js process managing N isolated tenant instances, each with its own agent configs, channel connections, and security boundaries.
 
@@ -22,28 +22,30 @@ Request → Channel Adapter → Rate Limiter → Guardrails (inbound)
        → Guardrails (outbound) → Outbound Sender → Channel (send)
 ```
 
-**What it does:** 7 agent types (chat, workflow, routing, handoff, knowledge, planning, task) · omnichannel delivery (WhatsApp, Telegram, Slack, Instagram, Messenger) · MCP tool calling · RAG · prompt injection detection · AG-UI streaming
+- 7 agent types: chat, workflow, routing, handoff, knowledge, planning, task
+- Omnichannel: WhatsApp, Telegram, Slack, Instagram, Messenger
+- MCP tool calling, RAG, prompt injection detection, AG-UI streaming
 
-**Public component:** [orqo-node-sdk](https://github.com/cristianoaredes/orqo-node-sdk) — zero-dependency TypeScript client SDK with fluent builders, HMAC-SHA256 webhook verification, and type-safe events.
+**SDK:** [orqo-node-sdk](https://github.com/cristianoaredes/orqo-node-sdk) — zero-dependency TypeScript client with fluent builders, HMAC-SHA256 webhook verification, and type-safe events.
 
 ---
 
-### MCP Servers
+## MCP Servers
 
-I build Model Context Protocol servers that connect AI assistants to real-world data. These work with Claude Desktop, Cursor, Windsurf, and any MCP-compatible client.
+Model Context Protocol servers connecting AI assistants to real-world data. Compatible with Claude Desktop, Cursor, Windsurf, and any MCP client.
 
 | Server | What it does |
 |--------|-------------|
 | [mcp-mobile-server](https://github.com/cristianoaredes/mcp-mobile-server) | Native mobile development assistance (Android, iOS, Flutter) |
-| [mcp-senado](https://github.com/cristianoaredes/mcp-senado) | Brazilian Federal Senate open data — legislators, proposals, voting records |
+| [mcp-senado](https://github.com/cristianoaredes/mcp-senado) | Brazilian Federal Senate — legislators, proposals, voting records |
 | [mcp-camara](https://github.com/cristianoaredes/mcp-camara) | Brazilian Chamber of Deputies — 62 tools for legislative data |
 | [mcp-dadosbr](https://github.com/cristianoaredes/mcp-dadosbr) | Brazilian CNPJ and CEP public data lookup |
-| [null-g-mcp](https://github.com/cristianoaredes/null-g-mcp) | 87 tools for controlling Google Antigravity IDE via ConnectRPC |
+| [null-g-mcp](https://github.com/cristianoaredes/null-g-mcp) | 87 tools for controlling Antigravity IDE via ConnectRPC |
 | [mcp-apple-store](https://github.com/cristianoaredes/mcp-apple-store) | Apple App Store Connect and Server API access |
 
 ---
 
-### Other Open Source
+## Open Source
 
 | Project | Description |
 |---------|-------------|
@@ -54,7 +56,7 @@ I build Model Context Protocol servers that connect AI assistants to real-world 
 
 ---
 
-### Writing
+## Writing
 
 I write about AI tooling, developer workflows, and the emerging agent ecosystem:
 
@@ -66,7 +68,7 @@ I write about AI tooling, developer workflows, and the emerging agent ecosystem:
 
 ---
 
-### What I work with
+## What I work with
 
 **Daily:** TypeScript, Python, Node.js, Express, PostgreSQL, Docker
 
@@ -79,8 +81,16 @@ I write about AI tooling, developer workflows, and the emerging agent ecosystem:
 ---
 
 <div align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=cristianoaredes&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true&bg_color=00000000" />
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=cristianoaredes&layout=compact&theme=github_dark&hide_border=true&bg_color=00000000&langs_count=8" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=cristianoaredes&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true&bg_color=00000000" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=cristianoaredes&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&bg_color=00000000" />
+    <img height="160" src="https://github-readme-stats.vercel.app/api?username=cristianoaredes&show_icons=true&hide_border=true&count_private=true&include_all_commits=true" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=cristianoaredes&layout=compact&theme=github_dark&hide_border=true&bg_color=00000000&langs_count=8" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=cristianoaredes&layout=compact&hide_border=true&bg_color=00000000&langs_count=8" />
+    <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=cristianoaredes&layout=compact&hide_border=true&langs_count=8" />
+  </picture>
 </div>
 
 ---
