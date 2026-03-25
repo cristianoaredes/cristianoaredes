@@ -37,40 +37,17 @@ Software engineer with **14+ years** of experience across mobile, backend, and A
 
 > Multi-tenant AI agent orchestration — from conversation to autonomous action
 
-<table>
-<tr>
-<td width="50%">
-
-**[agent-gateway](https://github.com/cristianoaredes/agent-gateway)** — Core Engine
-- Express 5 + TypeScript, PostgreSQL multi-tenant isolation
-- 7 agent types: chat, workflow, routing, handoff, knowledge, planning, task
-- Omnichannel: WhatsApp, Telegram, Slack, Instagram, Messenger
-- MCP tool calling, RAG, guardrails, prompt injection detection
-- AG-UI streaming, CopilotKit integration
-- Production: `orq.voxidigital.com.br`
-
-</td>
-<td width="50%">
-
-**[orqo-node-sdk](https://github.com/cristianoaredes/orqo-node-sdk)** — Client SDK
-- Zero-dependency TypeScript SDK
-- Admin + tenant operations, fluent builders
-- HMAC-SHA256 webhook verification
-- Type-safe event system
-
-**[orqo-desktop](https://github.com/cristianoaredes/orqo-desktop)** — Desktop App
-- macOS agent orchestration UI
-- Local development & monitoring
-
-</td>
-</tr>
-</table>
+Orqo is a production AI gateway I built from scratch: Express 5 + TypeScript, PostgreSQL multi-tenant isolation, 7 agent types (chat, workflow, routing, handoff, knowledge, planning, task), omnichannel delivery (WhatsApp, Telegram, Slack, Instagram, Messenger), MCP tool calling, RAG, guardrails, and prompt injection detection.
 
 ```
 Request → Channel Adapter → Rate Limiter → Guardrails (inbound)
        → Router → Agent Runner → LLM Provider → MCP Tools
        → Guardrails (outbound) → Outbound Sender → Channel (send)
 ```
+
+| Component | Description |
+|-----------|-------------|
+| [**orqo-node-sdk**](https://github.com/cristianoaredes/orqo-node-sdk) | Zero-dependency TypeScript client SDK — admin + tenant operations, fluent builders, HMAC-SHA256 webhook verification, type-safe events |
 
 ---
 
@@ -109,23 +86,16 @@ Request → Channel Adapter → Rate Limiter → Guardrails (inbound)
   </a>
 </td>
 <td align="center" width="14%">
+  <a href="https://github.com/cristianoaredes/null-g-mcp">
+    <img src="https://img.shields.io/badge/🚀-NullG-58A6FF?style=flat-square" /><br/>
+    <sub><b>null-g-mcp</b></sub><br/>
+    <sub>⭐ 1</sub>
+  </a>
+</td>
+<td align="center" width="14%">
   <a href="https://github.com/cristianoaredes/mcp-apple-store">
     <img src="https://img.shields.io/badge/🍎-AppStore-58A6FF?style=flat-square" /><br/>
     <sub><b>mcp-apple</b></sub><br/>
-    <sub>⭐ 0</sub>
-  </a>
-</td>
-<td align="center" width="14%">
-  <a href="https://github.com/cristianoaredes/mcp-instagram-server">
-    <img src="https://img.shields.io/badge/📸-Instagram-58A6FF?style=flat-square" /><br/>
-    <sub><b>mcp-instagram</b></sub><br/>
-    <sub>⭐ 0</sub>
-  </a>
-</td>
-<td align="center" width="14%">
-  <a href="https://github.com/cristianoaredes/comanda-mcp-server">
-    <img src="https://img.shields.io/badge/🍽️-Comanda-58A6FF?style=flat-square" /><br/>
-    <sub><b>comanda-mcp</b></sub><br/>
     <sub>⭐ 0</sub>
   </a>
 </td>
@@ -141,12 +111,9 @@ Request → Channel Adapter → Rate Limiter → Guardrails (inbound)
 | Project | Stack | Description |
 |---------|-------|-------------|
 | [**super-app-flutter-sample**](https://github.com/cristianoaredes/super-app-flutter-sample) | Flutter/Dart | Complete Super App architecture with micro-apps ⭐ 5 |
-| [**agents-dashboard**](https://github.com/cristianoaredes/agents-dashboard) | React + CopilotKit | Multi-agent ecosystem dashboard with React Flow |
-| [**bubble-math-quest**](https://github.com/cristianoaredes/bubble-math-quest) | Flutter + Flame | Educational math game for kids 6+ |
-| [**deep-agents-hub**](https://github.com/cristianoaredes/deep-agents-hub) | Python | Deep Agents framework hub |
-| [**uab**](https://github.com/cristianoaredes/uab) | Python | Universal Agent Backend — provider-agnostic MCP knowledge layer |
-| [**wrkout**](https://github.com/cristianoaredes/wrkout) | TypeScript | CrossFit Kids Studio Management SaaS — multi-tenant |
-| [**voxi-auto-api**](https://github.com/cristianoaredes/voxi-auto-api) | Hono + Bun | API wrapper with scraping → structured JSON endpoints |
+| [**null-g-proxy**](https://github.com/cristianoaredes/null-g-proxy) | TypeScript | OpenAI-compatible HTTP proxy for Antigravity IDE ⭐ 1 |
+| [**NodeForge-API**](https://github.com/cristianoaredes/NodeForge-API) | Express.js | Robust REST API boilerplate with auth & test coverage ⭐ 1 |
+| [**opencnpj**](https://github.com/cristianoaredes/opencnpj) | Dart | Access to Brazilian open CNPJ data ⭐ 1 |
 
 ---
 
