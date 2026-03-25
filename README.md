@@ -1,14 +1,25 @@
 # Cristiano Arêdes
 
-**Senior Software Engineer** — 14+ years shipping mobile, backend, and AI systems.
+**Senior Software Engineer** — 14+ years in software engineering.
 
-Currently building [Orqo](https://orq.voxidigital.com.br), an AI agent orchestration platform, and running [Voxi Digital](https://voxidigital.com.br), an AI-first studio based in São Paulo.
+Started building native iOS and Android apps, then went deep into Flutter — shipping fintech and health-tech products used by millions. Lived and worked in Malta for two years. Now back in São Paulo, building AI agent systems and MCP servers.
 
-My path: started in native mobile (Swift, Kotlin) → scaled Flutter apps to millions of users in fintech and health-tech → now deep in AI agents, MCP servers, and multi-tenant backends with TypeScript and Python.
+Currently running [Voxi Digital](https://voxidigital.com.br), an AI-first studio, and building products powered by autonomous agents.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-cristianoaredes-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/cristianoaredes/)
 [![Medium](https://img.shields.io/badge/Medium-@cristianoaredes-000?style=flat&logo=medium)](https://medium.com/@cristianoaredes)
 [![X](https://img.shields.io/badge/X-@cristianoaredes-000?style=flat&logo=x)](https://twitter.com/cristianoaredes)
+
+---
+
+## Products
+
+| Product | What it does |
+|---------|-------------|
+| [Orqo](https://orqo.pro) | Multi-tenant AI agent orchestration platform |
+| [iPCD](https://ipcd.app) | Tax exemption navigator for people with disabilities in Brazil — 4.9★, 1,250+ reviews |
+| [Comanda](https://comanda.top) | AI-powered WhatsApp ordering for restaurants and delivery |
+| [Wrkout](https://wrkout.com.br) | CrossFit Kids studio management with AI assistant on WhatsApp |
 
 ---
 
