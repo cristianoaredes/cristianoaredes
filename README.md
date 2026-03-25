@@ -1,189 +1,111 @@
-<div align="center">
-  <h3>Mobile Architect & Senior Software Engineer</h3>
-  <p>iOS · Android · Flutter · Swift · Kotlin · Node.js · AI/LLMs · Clean Architecture</p>
-</div>
+# 👋 Olá, eu sou Cristiano Aredes
 
-<div align="center">
-  
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/cristianoaredes/)
-  [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/cristianoaredes)
-  [![Website](https://img.shields.io/badge/Website-28B463?style=for-the-badge&logo=About.me&logoColor=white)](https://aredes.me)
-  
-</div>
+> **AI Engineer & Builder** | Criando agentes autônomos e ferramentas para developers
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=cristianoaredes&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&ring_color=58A6FF&text_color=c9d1d9&icon_color=58A6FF&title_color=58A6FF&bg_color=0d1117" alt="GitHub Stats" />
-</div>
+[![GitHub followers](https://img.shields.io/github/followers/cristianoaredes?style=social)](https://github.com/cristianoaredes)
+[![Profile Views](https://komarev.com/ghpvc/?username=cristianoaredes&color=0e75b6&style=flat)](https://github.com/cristianoaredes)
 
 ---
 
-## 🔧 Development Tools
+## 🚀 Sobre Mim
 
-- [Playwright MCP Server Documentation](./MCP-SERVER.md) - Run end-to-end tests with MCP integration
+Sou um engenheiro de software focado em **Inteligência Artificial** e **Automação**. Minha jornada evoluiu de desenvolvimento mobile (iOS/Flutter) para a criação de agentes AI autônomos e infraestrutura para LLMs.
 
-## 📖 About Me
-
-<img align="right" width="320" src="https://github-readme-streak-stats.herokuapp.com/?user=cristianoaredes&theme=github-dark&hide_border=true&stroke=58A6FF&ring=58A6FF&fire=58A6FF&currStreakNum=c9d1d9&sideNums=c9d1d9&currStreakLabel=58A6FF&background=0d1117&dates=c9d1d9" />
-
-I'm a software engineer with **14+ years** of experience in mobile and backend development. Specialist in **application architecture**, scalability, and performance, with solid experience in **fintech**, **health-tech**, and **AI-driven products**. 
-
-Currently, I lead cutting-edge projects involving **Flutter**, **Swift/Kotlin**, and integrations with **LLMs and AI Agents**, always aiming for maximum productivity and excellence in user experience.
-
-> "Technology with purpose: creating mobile experiences that solve real problems and generate lasting value."
+- 🤖 Especialista em **MCP (Model Context Protocol)** Servers
+- 🇧🇷 Criador de ferramentas para dados **brasileiros** (CNPJ, CEP, Legislativo)
+- 📱 Background em arquitetura mobile e micro-apps
+- 🔧 Apaixonado por developer experience e automação
 
 ---
 
-## 🔧 Tech Stack
+## ⭐ Projetos em Destaque
 
-<div align="center">
+### 🤖 MCP Servers
 
-  ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
-  ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
-  ![Swift](https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white)
-  ![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white)
-  ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-  ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-  ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-  ![LangChain](https://img.shields.io/badge/LangChain-00A9A6?style=for-the-badge&logo=chainlink&logoColor=white)
-  ![AI Agents](https://img.shields.io/badge/AI_Agents-FF5A00?style=for-the-badge&logo=onnx&logoColor=white)
-  ![RAG](https://img.shields.io/badge/RAG-E50914?style=for-the-badge&logo=database&logoColor=white)
-  ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-  ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
-  
-</div>
+Conecte assistentes de AI a dados e ferramentas do mundo real:
 
-<details>
-  <summary><b>🔍 More details about my tech stack</b></summary>
-  <br>
-  
-  ### Mobile Development
-  - Flutter · Dart · BLoC · Modular
-  - Swift · iOS SDK · UIKit
-  - Kotlin · Android SDK · Jetpack
-  
-  ### Backend & API
-  - Node.js · Express · RESTful APIs
-  - Python · FastAPI
-  
-  ### AI & ML
-  - RAG (Retrieval Augmented Generation)
-  - Vector Databases: Qdrant · Weaviate · Pinecone
-  - LLM Frameworks: LangChain · LangGraph · CrewAI
-  - AI Agents & Orchestration
-  - Cloud AI: AWS Bedrock · VertexAI · OpenAI
-  - Self-hosted LLMs · Embeddings
-  
-  ### Cloud & DevOps
-  - Docker · CI/CD
-  - AWS Services
-  
-  ### Tools & Practices
-  - Clean Architecture
-  - Modularization
-  - Git · GitHub
-</details>
+| Projeto | ⭐ Stars | Descrição |
+|---------|---------|-----------|
+| [**mcp-mobile-server**](https://github.com/cristianoaredes/mcp-mobile-server) | `7 ⭐` | Desenvolvimento mobile nativo (Android, iOS, Flutter) via AI |
+| [**mcp-senado**](https://github.com/cristianoaredes/mcp-senado) | `2 ⭐` | Dados abertos do **Senado Federal** brasileiro |
+| [**mcp-camara**](https://github.com/cristianoaredes/mcp-camara) | `1 ⭐` | Dados abertos da **Câmara dos Deputados** |
+| [**mcp-dadosbr**](https://github.com/cristianoaredes/mcp-dadosbr) | `1 ⭐` | Consulta de **CNPJ** e **CEP** brasileiros |
+| [**mcp-apple-store**](https://github.com/cristianoaredes/mcp-apple-store) | `0 ⭐` | Apple App Store Connect API |
+| [**null-g-mcp**](https://github.com/cristianoaredes/null-g-mcp) | `1 ⭐` | Controle do Google Antigravity IDE |
+
+> 💡 **Use com**: Claude Desktop, Cursor, Windsurf, Continue.dev e outros assistentes AI
 
 ---
 
-## 🚀 Featured Projects
+### 🛠️ Ferramentas & Frameworks
 
-<div align="center" class="projects-grid">
-
-  <a href="https://github.com/cristianoaredes/super-app-flutter-sample">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cristianoaredes&repo=super-app-flutter-sample&theme=github-dark&hide_border=true&title_color=58A6FF&text_color=c9d1d9&icon_color=58A6FF&bg_color=0d1117" />
-  </a>
-  <a href="https://github.com/cristianoaredes/AnythingToLLMs.txt">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cristianoaredes&repo=AnythingToLLMs.txt&theme=github-dark&hide_border=true&title_color=58A6FF&text_color=c9d1d9&icon_color=58A6FF&bg_color=0d1117" />
-  </a>
-
-  <a href="https://github.com/cristianoaredes/NodeForge-API">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cristianoaredes&repo=NodeForge-API&theme=github-dark&hide_border=true&title_color=58A6FF&text_color=c9d1d9&icon_color=58A6FF&bg_color=0d1117" />
-  </a>
-  <a href="https://github.com/cristianoaredes/codemodel-cli">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=cristianoaredes&repo=codemodel-cli&theme=github-dark&hide_border=true&title_color=58A6FF&text_color=c9d1d9&icon_color=58A6FF&bg_color=0d1117" />
-  </a>
-
-</div>
-
-<details>
-  <summary><b>📊 Project details</b></summary>
-  <br>
-  
-  | Project | Description | Tech Highlights |
-  | --- | --- | --- |
-  
-  | [Super App Demo](https://github.com/cristianoaredes/super-app-flutter-sample) | Modular "Super App" with GoRouter and GetIt | Flutter · Modular · BLoC |
-  | [AnythingToLLMs.txt](https://github.com/cristianoaredes/AnythingToLLMs.txt) | Document converter optimized for language models | Python · FastAPI · Docker · PDF · DOCX · HTML |
-  | [NodeForge-API](https://github.com/cristianoaredes/NodeForge-API) | API for building data processing flows | Node.js · REST API · Data Processing |
-  | [Codemodel CLI](https://github.com/cristianoaredes/codemodel-cli) | CLI interface for code generation with AI models | Python · CLI · Code Generation · AI Models |
-</details>
+| Projeto | ⭐ Stars | Descrição |
+|---------|---------|-----------|
+| [**super-app-flutter-sample**](https://github.com/cristianoaredes/super-app-flutter-sample) | `5 ⭐` | Arquitetura completa de Super App com micro-apps |
+| [**AnythingToLLMs.txt**](https://github.com/cristianoaredes/AnythingToLLMs.txt) | `1 ⭐` | Converta PDFs, DOCX, HTML para texto otimizado para LLMs |
+| [**NodeForge-API**](https://github.com/cristianoaredes/NodeForge-API) | `1 ⭐` | Boilerplate robusto de API REST com Express.js |
+| [**multi_llm_api**](https://github.com/cristianoaredes/multi_llm_api) | `1 ⭐` | API unificada para múltiplos provedores de LLM |
+| [**handyscripts**](https://github.com/cristianoaredes/handyscripts) | `0 ⭐` | Coleção de scripts úteis para produtividade |
 
 ---
 
-## ✍️ Blog & Articles
+### 📊 Dados Brasileiros
 
-<div>
-  <a href="https://medium.com/@cristianoaredes" target="_blank">
-    <img src="https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white" alt="Medium">
-  </a>
-</div>
-
-### Recent Articles
-
-* **[LLMS.txt: Enhancing Web Content for AI Interaction](https://medium.com/@cristianoaredes/llms-txt-enhancing-web-content-for-ai-interaction-9ae0f80c6da6)**
-  <br>An innovative approach to optimize web content for AI.
-
-* **[MCP and A2A: How Emerging Protocols Are Reshaping Software Development](https://medium.com/@cristianoaredes/mcp-e-a2a-como-protocolos-emergentes-est%C3%A3o-remodelando-o-desenvolvimento-de-software-a0431e096c53)**
-  <br>Analysis of new paradigms of communication between applications.
-
-* **[The AI IDE War: The New Technology Battlefield](https://medium.com/@cristianoaredes/a-guerra-das-ides-com-ia-o-novo-campo-de-batalha-tecnol%C3%B3gico-e0389ecda32c)**
-  <br>How AI is transforming the IDE and development landscape.
+| Projeto | ⭐ Stars | Descrição |
+|---------|---------|-----------|
+| [**opencnpj**](https://github.com/cristianoaredes/opencnpj) | `1 ⭐` | Acesso a dados abertos de CNPJ |
 
 ---
 
-## 📫 Connect With Me  
+## 🏗️ Arquitetura & SDKs
 
-<div align="center">
-  
-  <a href="https://aredes.me">
-    <img src="https://img.shields.io/badge/Website-aredes.me-28B463?style=for-the-badge" />
-  </a>
-  <a href="https://www.linkedin.com/in/cristianoaredes/">
-    <img src="https://img.shields.io/badge/LinkedIn-cristianoaredes-0A66C2?style=for-the-badge&logo=linkedin" />
-  </a>
-  <a href="mailto:cristianoaredes@icloud.com">
-    <img src="https://img.shields.io/badge/Email-cristianoaredes@icloud.com-D14836?style=for-the-badge&logo=gmail" />
-  </a>
-  <a href="https://twitter.com/cristianoaredes">
-    <img src="https://img.shields.io/badge/Twitter-@cristianoaredes-1DA1F2?style=for-the-badge&logo=twitter" />
-  </a>
-  
-</div>
+- **ironclaw** → Framework de orquestração de agentes AI
+- **orqo-node-sdk** → SDK Node.js para integração com plataforma orqo
+- **browser-ai** → Automação de navegador com AI
+
+> 🔒 *Estes projetos são privados mas disponíveis para colaboração*
 
 ---
 
-<div align="center">
-  
-  <img src="https://komarev.com/ghpvc/?username=cristianoaredes&style=for-the-badge&color=58A6FF" alt="Profile Views"/>
-  
-  <br><br>
-  
-  <img width="495" src="https://github-readme-stats.vercel.app/api/top-langs/?username=cristianoaredes&layout=compact&hide_border=true&theme=github-dark&title_color=58A6FF&text_color=c9d1d9&icon_color=58A6FF&bg_color=0d1117" alt="Top Languages" />
-  
-  <br>
-  
-  <img width="495" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=cristianoaredes&theme=github_dark&utcOffset=3" alt="Coding Activity"/>
-  
-</div>
+## 🛠️ Stack Tecnológico
+
+**AI & LLMs**
+```
+TypeScript • Python • OpenAI • Anthropic • MCP
+```
+
+**Backend & APIs**
+```
+Node.js • Express • Hono • Cloudflare Workers • D1 • R2
+```
+
+**Frontend**
+```
+Next.js • React • TypeScript • Tailwind CSS
+```
+
+**Mobile (Legacy)**
+```
+Flutter • Dart • iOS • Swift
+```
 
 ---
 
-<div align="center">
-  
-  ### 💬 Let's connect and collaborate!
-  
-  <a href="https://www.linkedin.com/in/cristianoaredes/">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  
-</div>
+## 📈 GitHub Stats
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=cristianoaredes&show_icons=true&theme=dark&hide_border=true&count_private=true)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=cristianoaredes&layout=compact&theme=dark&hide_border=true)
+
+---
+
+## 🤝 Vamos Conectar?
+
+- 💼 Aberto para colaborações em projetos de AI/Agentes
+- 💡 Interessado em MCP servers e ferramentas para developers
+- 🇧🇷 Foco especial em dados e soluções para o Brasil
+
+---
+
+> 💬 *"O futuro do software são agentes autônomos trabalhando em conjunto"*
+
