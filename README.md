@@ -54,10 +54,7 @@ Connect AI assistants to real-world data and tools:
 | Project | ⭐ Stars | Description |
 |---------|---------|-------------|
 | [**super-app-flutter-sample**](https://github.com/cristianoaredes/super-app-flutter-sample) | `5 ⭐` | Complete Super App architecture with micro-apps |
-| [**AnythingToLLMs.txt**](https://github.com/cristianoaredes/AnythingToLLMs.txt) | `1 ⭐` | Convert PDFs, DOCX, HTML to LLM-optimized text |
 | [**NodeForge-API**](https://github.com/cristianoaredes/NodeForge-API) | `1 ⭐` | Robust REST API boilerplate with Express.js |
-| [**multi_llm_api**](https://github.com/cristianoaredes/multi_llm_api) | `1 ⭐` | Unified API for multiple LLM providers |
-| [**handyscripts**](https://github.com/cristianoaredes/handyscripts) | `0 ⭐` | Collection of productivity scripts |
 
 ---
 
