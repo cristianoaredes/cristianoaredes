@@ -21,16 +21,6 @@ Currently building **AI agent infrastructure**: MCP servers for Brazilian govern
 
 ---
 
-## Products
-
-| Product | What it does |
-|---------|-------------|
-| [**Orqo**](https://orqo.pro) | Multi-tenant AI agent orchestration platform |
-| [**iPCD**](https://ipcd.app) | Tax exemption navigator for people with disabilities in Brazil — 4.9★, 1,250+ reviews |
-| [**Comanda**](https://comanda.top) | AI-powered WhatsApp ordering for restaurants and delivery |
-| [**Wrkout**](https://wrkout.com.br) | CrossFit Kids studio management with AI assistant on WhatsApp |
-
----
 
 ## Orqo — AI Agent Orchestration
 
