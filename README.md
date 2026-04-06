@@ -99,9 +99,30 @@ SDK: **[orqo-node-sdk](https://github.com/cristianoaredes/orqo-node-sdk)** — z
 
 ## Open Source
 
+### Claude Code Plugins
+
 | Project | Stack | Description |
 |---------|-------|-------------|
-| [**super-app-flutter-sample**](https://github.com/cristianoaredes/super-app-flutter-sample) | Flutter/Dart | Modular Super App architecture with micro-apps, GoRouter, GetIt, BLoC ⭐ 5 |
+| [**build-ios-apps**](https://github.com/cristianoaredes/build-ios-apps) | Swift / Claude Code | Claude Code plugin with 27 iOS/SwiftUI + App Store Connect skills for AI-assisted iOS development |
+| [**aredes-marketplace**](https://github.com/cristianoaredes/aredes-marketplace) | Claude Code | Claude Code plugin marketplace — curated skills and agents for mobile and AI workflows |
+| [**claude-prompt-optimizer**](https://github.com/cristianoaredes/claude-prompt-optimizer) | Claude Code | Claude Code prompt engineering plugin for optimizing and tuning prompts with AI agent support |
+
+### MCP Servers
+
+| Project | Stack | Description |
+|---------|-------|-------------|
+| [**mcp-mobile-server**](https://github.com/cristianoaredes/mcp-mobile-server) | TypeScript | Native MCP Server for Android, iOS, and Flutter development — device control, builds, and logs |
+| [**mcp-dadosbr**](https://github.com/cristianoaredes/mcp-dadosbr) | TypeScript | MCP Server for Brazilian public data (CNPJ, CEP) in Claude Desktop and Cursor |
+| [**mcp-senado**](https://github.com/cristianoaredes/mcp-senado) | TypeScript | MCP Server for Brazilian Federal Senate open data API |
+| [**mcp-camara**](https://github.com/cristianoaredes/mcp-camara) | TypeScript | MCP Server for Chamber of Deputies open data — 62 tools for AI agent integration |
+| [**mcp-apple-store**](https://github.com/cristianoaredes/mcp-apple-store) | TypeScript | MCP Server for App Store Connect and App Store Server APIs |
+| [**null-g-mcp**](https://github.com/cristianoaredes/null-g-mcp) | TypeScript | MCP Server for Google Antigravity IDE — 87 tools via ConnectRPC |
+
+### Mobile & Other
+
+| Project | Stack | Description |
+|---------|-------|-------------|
+| [**super-app-flutter-sample**](https://github.com/cristianoaredes/super-app-flutter-sample) | Flutter/Dart | Flutter Super App architecture sample with micro-apps, GoRouter, BLoC, and GetIt dependency injection |
 | [**null-g-proxy**](https://github.com/cristianoaredes/null-g-proxy) | TypeScript | OpenAI-compatible HTTP proxy for Antigravity IDE |
 | [**NodeForge-API**](https://github.com/cristianoaredes/NodeForge-API) | Express.js | REST API boilerplate with auth and full test coverage |
 | [**opencnpj**](https://github.com/cristianoaredes/opencnpj) | Dart | Open CNPJ data access for Brazilian company lookup |
