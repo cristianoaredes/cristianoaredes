@@ -21,23 +21,6 @@ Currently building **AI agent infrastructure**: MCP servers for Brazilian govern
 
 ---
 
-
-## Orqo — AI Agent Orchestration
-
-Multi-tenant AI gateway handling conversation routing, tool calling, and multi-channel delivery in production.
-
-```
-Request → Channel Adapter → Rate Limiter → Guardrails (inbound)
-       → Router → Agent Runner → LLM Provider → MCP Tools
-       → Guardrails (outbound) → Outbound Sender → Channel (send)
-```
-
-7 agent types · Omnichannel (WhatsApp, Telegram, Slack, Instagram, Messenger) · MCP tool calling · RAG · Prompt injection detection · AG-UI streaming
-
-SDK: **[orqo-node-sdk](https://github.com/cristianoaredes/orqo-node-sdk)** — zero-dependency TypeScript client with fluent builders and HMAC-SHA256 webhook verification.
-
----
-
 ## MCP Servers
 
 > Model Context Protocol servers connecting AI assistants to real-world data
